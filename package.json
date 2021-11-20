@@ -17,7 +17,14 @@
   },
   "repository": "git@github.com:Jujulego/pid-file.git",
   "packageManager": "yarn@3.1.0",
+  "dependencies": {
+    "debug": "^4.3.2",
+    "proper-lockfile": "^4.1.2"
+  },
   "devDependencies": {
+    "@types/debug": "4.1.7",
+    "@types/node": "14.14.31",
+    "@types/proper-lockfile": "4.1.2",
     "typescript": "4.4.4"
   }
 }
