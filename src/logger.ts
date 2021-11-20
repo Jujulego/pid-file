@@ -15,18 +15,18 @@ export class DebugLogger implements Logger {
 
   // Methods
   debug(msg: string): void {
-    this._debug.log(`debug ${msg}`);
+    this._debug(`debug ${msg}`);
   }
 
   info(msg: string): void {
-    this._debug.log(`info  ${msg}`);
+    this._debug(`info  ${msg}`);
   }
 
   warn(msg: string): void {
-    this._debug.log(`warn  ${msg}`);
+    this._debug(`warn  ${msg}`);
   }
 
   error(msg: string): void {
-    this._debug.log(`error ${msg}`);
+    this._debug(`error ${msg}`);
   }
 }
