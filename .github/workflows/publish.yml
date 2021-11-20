@@ -142,7 +142,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2.4.0
         with:
-          ref: master
           fetch-depth: 0
 
       - name: Download test coverage
@@ -176,8 +175,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2.4.0
-        with:
-          ref: master
 
       - name: Use Node.js 14.x
         uses: actions/setup-node@v2.4.1
