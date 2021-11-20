@@ -17,14 +17,31 @@
   },
   "repository": "git@github.com:Jujulego/pid-file.git",
   "packageManager": "yarn@3.1.0",
+  "browserslist": [
+    "maintained node versions and node >= 14"
+  ],
+  "scripts": {
+    "clean": "gulp clean",
+    "build": "gulp build",
+    "watch": "gulp watch"
+  },
   "dependencies": {
     "debug": "^4.3.2",
     "proper-lockfile": "^4.1.2"
   },
   "devDependencies": {
+    "@babel/core": "7.16.0",
+    "@babel/plugin-proposal-class-properties": "7.16.0",
+    "@babel/preset-env": "7.16.4",
+    "@babel/preset-typescript": "7.16.0",
     "@types/debug": "4.1.7",
     "@types/node": "14.14.31",
     "@types/proper-lockfile": "4.1.2",
+    "del": "6.0.0",
+    "gulp": "4.0.2",
+    "gulp-babel": "8.0.0",
+    "gulp-cli": "2.3.0",
+    "gulp-typescript": "6.0.0-alpha.1",
     "typescript": "4.4.4"
   }
 }

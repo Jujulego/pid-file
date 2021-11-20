@@ -6,5 +6,6 @@
 !.yarn/versions
 .pnp.*
 coverage/
+dist/
 *.pid
 *.log
