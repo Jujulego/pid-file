@@ -21,6 +21,7 @@
     "maintained node versions and node >= 14"
   ],
   "scripts": {
+    "lint": "eslint {src,tests}/**",
     "clean": "gulp clean",
     "build": "gulp build",
     "watch": "gulp watch",
@@ -39,7 +40,11 @@
     "@types/jest": "27.0.3",
     "@types/node": "14.14.31",
     "@types/proper-lockfile": "4.1.2",
+    "@typescript-eslint/eslint-plugin": "5.4.0",
+    "@typescript-eslint/parser": "5.4.0",
     "del": "6.0.0",
+    "eslint": "7.32.0",
+    "eslint-plugin-jest": "25.2.4",
     "gulp": "4.0.2",
     "gulp-babel": "8.0.0",
     "gulp-cli": "2.3.0",
