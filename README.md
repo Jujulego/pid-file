@@ -3,6 +3,7 @@
 ![Licence](https://img.shields.io/github/license/jujulego/pid-file)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=jujulego_pid-file&metric=alert_status)](https://sonarcloud.io/dashboard?id=jujulego_pid-file)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=jujulego_pid-file&metric=coverage)](https://sonarcloud.io/dashboard?id=jujulego_pid-file)
+[![Automated Release Notes by gren](https://img.shields.io/badge/%F0%9F%A4%96-release%20notes-00B2EE.svg)](https://github-tools.github.io/github-release-notes/)
 
 A simple pidfile utility. A pidfile holds the current pid of the process running your server.
 It can be used to detect if your process is already running, and interact with it using signals.
