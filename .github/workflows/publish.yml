@@ -120,7 +120,7 @@ jobs:
           if `git diff --quiet --exit-code`
           then
             echo "::warning::Nothing changed !"
-            echo "::set-output name=need-release::false"
+            echo "::set-output name=need-release::true"
           else
             git commit -am "chore: update version numbers"
             git tag $version
