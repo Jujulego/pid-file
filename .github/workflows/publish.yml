@@ -178,6 +178,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2.4.0
+        with:
+          ref: main
 
       - name: Use Node.js 14.x
         uses: actions/setup-node@v2.4.1
