@@ -1,7 +1,7 @@
 import { debug } from 'debug';
 
 // Types
-export interface Logger {
+export interface ILogger {
   debug(msg: string): void;
   info(msg: string): void;
   warn(msg: string): void;
@@ -9,7 +9,10 @@ export interface Logger {
 }
 
 // Logger
-export class DebugLogger implements Logger {
+/**
+ * Implements `ILogger` using the `debug` module.
+ */
+export class DebugLogger implements ILogger {
   // Attributes
   private readonly _debug = debug('pid-file');
 

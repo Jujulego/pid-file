@@ -1,11 +1,13 @@
 {
-  "name": "pid-file",
+  "name": "@jujulego/pid-file",
   "version": "0.0.0",
   "license": "MIT",
   "keywords": [
+    "node",
     "pid",
     "pidfile"
   ],
+  "description": "A simple pidfile utility.",
   "author": "Julien Capellari <julien.capellari@gmail.com>",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",

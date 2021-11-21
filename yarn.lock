@@ -1571,6 +1571,37 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@jujulego/pid-file@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@jujulego/pid-file@workspace:."
+  dependencies:
+    "@babel/core": 7.16.0
+    "@babel/plugin-proposal-class-properties": 7.16.0
+    "@babel/preset-env": 7.16.4
+    "@babel/preset-typescript": 7.16.0
+    "@types/debug": 4.1.7
+    "@types/jest": 27.0.3
+    "@types/node": 14.14.31
+    "@types/proper-lockfile": 4.1.2
+    "@typescript-eslint/eslint-plugin": 5.4.0
+    "@typescript-eslint/parser": 5.4.0
+    debug: ^4.3.2
+    del: 6.0.0
+    eslint: 7.32.0
+    eslint-plugin-jest: 25.2.4
+    gulp: 4.0.2
+    gulp-babel: 8.0.0
+    gulp-cli: 2.3.0
+    gulp-typescript: 6.0.0-alpha.1
+    jest: 27.3.1
+    proper-lockfile: ^4.1.2
+    source-map-support: 0.5.21
+    ts-jest: 27.0.7
+    ts-node: 10.4.0
+    typescript: 4.4.4
+  languageName: unknown
+  linkType: soft
+
 "@nodelib/fs.scandir@npm:2.1.5":
   version: 2.1.5
   resolution: "@nodelib/fs.scandir@npm:2.1.5"
@@ -6622,37 +6653,6 @@ __metadata:
   checksum: 16818720ea7c5872b6af110760dee856c8e4cd79aed1c7a006d076b1cc09eff3ae41ca5019966694c33fbd2e1cc6ea617ab10e4adac6df06556168f13be3fca2
   languageName: node
   linkType: hard
-
-"pid-file@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "pid-file@workspace:."
-  dependencies:
-    "@babel/core": 7.16.0
-    "@babel/plugin-proposal-class-properties": 7.16.0
-    "@babel/preset-env": 7.16.4
-    "@babel/preset-typescript": 7.16.0
-    "@types/debug": 4.1.7
-    "@types/jest": 27.0.3
-    "@types/node": 14.14.31
-    "@types/proper-lockfile": 4.1.2
-    "@typescript-eslint/eslint-plugin": 5.4.0
-    "@typescript-eslint/parser": 5.4.0
-    debug: ^4.3.2
-    del: 6.0.0
-    eslint: 7.32.0
-    eslint-plugin-jest: 25.2.4
-    gulp: 4.0.2
-    gulp-babel: 8.0.0
-    gulp-cli: 2.3.0
-    gulp-typescript: 6.0.0-alpha.1
-    jest: 27.3.1
-    proper-lockfile: ^4.1.2
-    source-map-support: 0.5.21
-    ts-jest: 27.0.7
-    ts-node: 10.4.0
-    typescript: 4.4.4
-  languageName: unknown
-  linkType: soft
 
 "pify@npm:^2.0.0":
   version: 2.3.0

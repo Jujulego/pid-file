@@ -132,10 +132,10 @@ jobs:
           git push
           git push --tags
 
-#      - name: Publish
-#        run: yarn npm publish --access public --tolerate-republish
-#        env:
-#          YARN_NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Publish
+        run: yarn npm publish --access public --tolerate-republish
+        env:
+          YARN_NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
     outputs:
       version: ${{ steps.version-apply.outputs.version }}

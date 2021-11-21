@@ -1,14 +1,18 @@
 import { promises as fs } from 'fs';
 import { lock } from 'proper-lockfile';
 
-import { DebugLogger, Logger } from './logger';
+import { DebugLogger, ILogger } from './logger';
 
 // Class
 export class PidFile {
   // Constructor
+  /**
+   * @param filename path to the managed pidfile
+   * @param _logger custom logger
+   */
   constructor(
     readonly filename: string,
-    private readonly _logger: Logger = new DebugLogger()
+    private readonly _logger: ILogger = new DebugLogger()
   ) {}
 
   // Statics
@@ -22,16 +26,10 @@ export class PidFile {
   }
 
   // Methods
-  private async _lock<R>(fun: () => Promise<R>): Promise<R> {
-    const release = await lock(this.filename);
-
-    try {
-      return await fun();
-    } finally {
-      await release();
-    }
-  }
-
+  /**
+   * Creates pidfile. If the pidfile already exists tries to update it.
+   * Returns true if the pidfile was successfully created/updated, false otherwise.
+   */
   async create(): Promise<boolean> {
     try {
       this._logger.debug(`Create pid file ${process.pid}`);
@@ -41,39 +39,45 @@ export class PidFile {
         // Try to update pidfile
         return await this.update();
       } else {
-        this._logger.error(err.stack || err.message);
+        throw err;
       }
-
-      return false;
     }
 
     return true;
   }
 
+  /**
+   * Tries to update the pidfile.
+   * Returns true if the pidfile was updated false otherwise.
+   */
   async update(): Promise<boolean> {
-    // Get other process pid
-    const pid = parseInt(await fs.readFile(this.filename, 'utf-8'));
-    this._logger.warn(`Looks like myr was already started (${pid})`);
-
-    // Check if other process is still running
-    if (PidFile._processIsRunning(pid)) return false;
+    const release = await lock(this.filename);
 
     try {
+      // Get other process pid
+      const pid = parseInt(await fs.readFile(this.filename, 'utf-8'));
+      this._logger.warn(`Looks like server was already started (${pid})`);
+
+      // Check if other process is still running
+      if (PidFile._processIsRunning(pid)) {
+        return false;
+      }
+
       // Lock pidfile
-      await this._lock(async () => {
-        this._logger.debug(`Update pid file ${pid} => ${process.pid}`);
-        await fs.writeFile(this.filename, process.pid.toString(), { flag: 'w', encoding: 'utf-8' });
-      });
+      this._logger.debug(`Update pid file ${pid} => ${process.pid}`);
+      await fs.writeFile(this.filename, process.pid.toString(), { flag: 'w', encoding: 'utf-8' });
 
       this._logger.info(`${pid} was killed or stopped, pidfile updated`);
-    } catch (err) {
-      this._logger.error(err);
-      return false;
-    }
 
-    return true;
+      return true;
+    } finally {
+      await release();
+    }
   }
 
+  /**
+   * Deletes the pidfile.
+   */
   async delete(): Promise<void> {
     this._logger.debug('Delete pid file');
     await fs.unlink(this.filename);
