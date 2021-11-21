@@ -17,7 +17,10 @@
     "import": "./dist/esm/index.js",
     "types": "./dist/types/index.d.ts"
   },
-  "repository": "git@github.com:Jujulego/pid-file.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jujulego/pid-file"
+  },
   "packageManager": "yarn@3.1.0",
   "browserslist": [
     "maintained node versions and node >= 14"

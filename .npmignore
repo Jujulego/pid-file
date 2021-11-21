@@ -42,7 +42,7 @@ lerna-debug.log*
 .npmignore
 .yarnrc.yml
 gulpfile.js
-jest.config.js
+jest.config.*
 nest-cli.json
 sonar-project.properties
 tsconfig.*.json
