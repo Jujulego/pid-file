@@ -5,7 +5,6 @@ export interface ILogger {
   debug(msg: string): void;
   info(msg: string): void;
   warn(msg: string): void;
-  error(msg: string): void;
 }
 
 // Logger
@@ -27,9 +26,5 @@ export class DebugLogger implements ILogger {
 
   warn(msg: string): void {
     this._debug(`warn  ${msg}`);
-  }
-
-  error(msg: string): void {
-    this._debug(`error ${msg}`);
   }
 }

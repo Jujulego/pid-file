@@ -45,7 +45,7 @@ describe('PidFile.create', () => {
 
     // Test
     const pidfile = new PidFile('.test.pid');
-    await expect(pidfile.create()).resolves.toBe(false);
+    await expect(pidfile.create()).rejects.toEqual(new Error('Failed !'));
   });
 });
 
@@ -84,7 +84,7 @@ describe('PidFile.update', () => {
     const pidfile = new PidFile('.test.pid');
     await expect(pidfile.update()).resolves.toBe(false);
 
-    expect(lock).not.toHaveBeenCalled();
+    expect(lock).toHaveBeenCalled();
     expect(fs.writeFile).not.toHaveBeenCalled();
   });
 
@@ -93,7 +93,7 @@ describe('PidFile.update', () => {
 
     // Test
     const pidfile = new PidFile('.test.pid');
-    await expect(pidfile.update()).resolves.toBe(false);
+    await expect(pidfile.update()).rejects.toEqual(new Error('Failed !'));
 
     expect(lock).toHaveBeenCalledWith('.test.pid');
     expect(lockRelease).toHaveBeenCalled();

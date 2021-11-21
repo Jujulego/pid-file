@@ -47,12 +47,17 @@ You can view those logs by setting the `DEBUG` env variable to `pid-file`.
 ### Customization
 The logger can be customized by passing yours to the `PidFile` constructor. It will have to match the `ILogger` interface:
 
+#### Using console
+```typescript
+const pidfile = new PidFile('.example.pid', console);
+```
+
+#### Or custom levels
 ```typescript
 const pidfile = new PidFile('.example.pid', {
-  debug(msg) { console.log(msg) },
-  info(msg)  { console.log(msg) },
-  warn(msg)  { console.warn(msg) },
-  error(msg) { console.error(msg) }
+  debug(msg) { console.log(msg); },
+  info(msg)  { console.log(msg); },
+  warn(msg)  { console.warn(msg); }
 });
 ```
 
@@ -78,7 +83,6 @@ Deletes the pidfile.
 ### `debug(msg: string): void`
 ### `info(msg: string): void`
 ### `warn(msg: string): void`
-### `error(msg: string): void`
 
 ## `DebugLogger` class
 Implements `ILogger` using the `debug` module.
