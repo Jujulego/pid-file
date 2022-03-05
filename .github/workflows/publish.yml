@@ -97,7 +97,7 @@ jobs:
       - name: Install
         run: yarn install --immutable
 
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v3
         with:
           name: build-artifacts
           path: dist
@@ -152,7 +152,7 @@ jobs:
           fetch-depth: 0
 
       - name: Download test coverage
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         continue-on-error: true
         with:
           name: coverage
