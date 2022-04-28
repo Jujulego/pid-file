@@ -63,49 +63,6 @@ warn(msg)  { console.warn(msg); }
 ```
 
 # Documentation
-  <a name="DebugLogger"></a>
-
-## DebugLogger
-Implements `ILogger` using the `debug` module.
-
-**Kind**: global class  
-  <a name="PidFile"></a>
-
-## PidFile
-**Kind**: global class  
-
-* [PidFile](#PidFile)
-    * [new PidFile(filename, _logger)](#new_PidFile_new)
-    * [.create()](#PidFile+create)
-    * [.update()](#PidFile+update)
-    * [.delete()](#PidFile+delete)
-
-<a name="new_PidFile_new"></a>
-
-### new PidFile(filename, _logger)
-
-| Param | Description |
-| --- | --- |
-| filename | path to the managed pidfile |
-| _logger | custom logger |
-
-<a name="PidFile+create"></a>
-
-### pidFile.create()
-Creates pidfile. If the pidfile already exists tries to update it.
-Returns true if the pidfile was successfully created/updated, false otherwise.
-
-**Kind**: instance method of [<code>PidFile</code>](#PidFile)  
-<a name="PidFile+update"></a>
-
-### pidFile.update()
-Tries to update the pidfile.
-Returns true if the pidfile was updated false otherwise.
-
-**Kind**: instance method of [<code>PidFile</code>](#PidFile)  
-<a name="PidFile+delete"></a>
-
-### pidFile.delete()
-Deletes the pidfile.
-
-**Kind**: instance method of [<code>PidFile</code>](#PidFile)  
+{{#classes}}
+  {{>docs}}
+{{/classes}}
