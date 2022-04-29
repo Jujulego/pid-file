@@ -31,8 +31,8 @@ import { PidFile } from '@jujulego/pid-file';
 const pidfile = new PidFile('.example.pid');
 
 if (!await pidfile.create()) {
-console.warn('Failed to create .example.pid');
-process.exit(1);
+  console.warn('Failed to create .example.pid');
+  process.exit(1);
 }
 
 // Do your job ;)
@@ -56,20 +56,30 @@ const pidfile = new PidFile('.example.pid', console);
 #### Or custom levels
 ```typescript
 const pidfile = new PidFile('.example.pid', {
-debug(msg) { console.log(msg); },
-info(msg)  { console.log(msg); },
-warn(msg)  { console.warn(msg); }
+  debug(msg) { console.log(msg); },
+  info(msg)  { console.log(msg); },
+  warn(msg)  { console.warn(msg); }
 });
 ```
 
 # Documentation
-  <a name="DebugLogger"></a>
+## Classes
+
+<dl>
+<dt><a href="#DebugLogger">DebugLogger</a></dt>
+<dd><p>Implements <code>ILogger</code> using the <code>debug</code> module.</p>
+</dd>
+<dt><a href="#PidFile">PidFile</a></dt>
+<dd></dd>
+</dl>
+
+<a name="DebugLogger"></a>
 
 ## DebugLogger
 Implements `ILogger` using the `debug` module.
 
 **Kind**: global class  
-  <a name="PidFile"></a>
+<a name="PidFile"></a>
 
 ## PidFile
 **Kind**: global class  
