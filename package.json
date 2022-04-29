@@ -38,8 +38,8 @@
     "lint": "eslint {src,tests}/**",
     "clean": "gulp clean",
     "build": "gulp build",
-    "docs": "gulp docs",
     "watch": "gulp watch",
+    "docs": "npx jsdoc-to-markdown --files ./dist/cjs/*.js --template ./docs/README.hbs --example-lang typescript > ./README.md",
     "test": "jest"
   },
   "dependencies": {
@@ -56,7 +56,6 @@
     "@types/gulp-babel": "6.1.30",
     "@types/gulp-sourcemaps": "0.0.35",
     "@types/jest": "27.4.1",
-    "@types/jsdoc-to-markdown": "7.0.3",
     "@types/node": "14.18.16",
     "@types/proper-lockfile": "4.1.2",
     "@typescript-eslint/eslint-plugin": "5.21.0",
@@ -71,7 +70,6 @@
     "gulp-sourcemaps": "3.0.0",
     "gulp-typescript": "6.0.0-alpha.1",
     "jest": "27.5.1",
-    "jsdoc-to-markdown": "^7.1.1",
     "source-map-support": "0.5.21",
     "ts-jest": "27.1.4",
     "ts-node": "10.7.0",

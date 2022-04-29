@@ -1,12 +1,9 @@
 import { flow, steps } from '@jujulego/flow';
-import { exec } from 'child_process';
 import del from 'del';
 import gulp from 'gulp';
 import babel from 'gulp-babel';
 import sourcemaps from 'gulp-sourcemaps';
 import typescript from 'gulp-typescript';
-import jsdoc2md from 'jsdoc-to-markdown';
-import { promises as fs } from 'fs';
 
 // Config
 const paths = {
@@ -55,16 +52,6 @@ gulp.task('build:types', () => flow(
   dts(),
   dest('dist/types')
 ));
-
-gulp.task('docs', () => exec('npx jsdoc-to-markdown --files "./dist/cjs/*.js" --template "./docs/README.hbs" --example-lang typescript > ./README.md'));
-
-// gulp.task('docs', async () => {
-//   const docs = await jsdoc2md.render({
-//     files: './dist/cjs/*.js',
-//     template: await fs.readFile('./docs/README.hbs', 'utf-8')
-//   });
-//   await fs.writeFile('./README.md', docs);
-// });
 
 gulp.task('build', gulp.parallel('build:cjs', 'build:esm', 'build:types'));
 
