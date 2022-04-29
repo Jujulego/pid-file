@@ -38,9 +38,9 @@
     "lint": "eslint {src,tests}/**",
     "clean": "gulp clean",
     "build": "gulp build",
+    "docs": "gulp docs",
     "watch": "gulp watch",
-    "test": "jest",
-    "docs": "jsdoc2md ./dist/cjs/*.js > ./DOCS.md"
+    "test": "jest"
   },
   "dependencies": {
     "debug": "^4.3.2",

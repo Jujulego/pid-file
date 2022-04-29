@@ -17,6 +17,10 @@ on:
   pull_request:
     # The branches below must be a subset of the branches above
     branches: [ master ]
+  workflow_run:
+    workflows: [Publish]
+    types:
+      - completed
   schedule:
     - cron: '18 18 * * 1'
 
