@@ -107,6 +107,13 @@ jobs:
           git config --global user.name 'Boobrie'
           git config --global user.email 'boobrie@users.noreply.github.com'
 
+      - name: Regenerate README.md
+        run: |
+          yarn run docs
+          
+          # Commit
+          git commit -am "chore: regenerate docs"
+
       - name: Apply version update
         id: version-apply
         run: |
