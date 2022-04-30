@@ -9,7 +9,7 @@ export interface ILogger {
 
 // Logger
 /**
- * Implements `ILogger` using the `debug` module.
+ * Default logger using the `debug` module.
  */
 export class DebugLogger implements ILogger {
   // Attributes

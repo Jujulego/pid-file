@@ -8,11 +8,11 @@ export class PidFile {
   // Constructor
   /**
    * @param filename path to the managed pidfile
-   * @param _logger custom logger
+   * @param logger custom logger
    */
   constructor(
     readonly filename: string,
-    private readonly _logger: ILogger = new DebugLogger()
+    private readonly logger: ILogger = new DebugLogger()
   ) {}
 
   // Statics
@@ -32,7 +32,7 @@ export class PidFile {
    */
   async create(): Promise<boolean> {
     try {
-      this._logger.debug(`Create pid file ${process.pid}`);
+      this.logger.debug(`Create pid file ${process.pid}`);
       await fs.writeFile(this.filename, process.pid.toString(), { flag: 'wx', encoding: 'utf-8' });
     } catch (err) {
       if (err.code === 'EEXIST') {
@@ -56,7 +56,7 @@ export class PidFile {
     try {
       // Get other process pid
       const pid = parseInt(await fs.readFile(this.filename, 'utf-8'));
-      this._logger.warn(`Looks like server was already started (${pid})`);
+      this.logger.warn(`Looks like server was already started (${pid})`);
 
       // Check if other process is still running
       if (PidFile._processIsRunning(pid)) {
@@ -64,10 +64,10 @@ export class PidFile {
       }
 
       // Lock pidfile
-      this._logger.debug(`Update pid file ${pid} => ${process.pid}`);
+      this.logger.debug(`Update pid file ${pid} => ${process.pid}`);
       await fs.writeFile(this.filename, process.pid.toString(), { flag: 'w', encoding: 'utf-8' });
 
-      this._logger.info(`${pid} was killed or stopped, pidfile updated`);
+      this.logger.info(`${pid} was killed or stopped, pidfile updated`);
 
       return true;
     } finally {
@@ -79,7 +79,7 @@ export class PidFile {
    * Deletes the pidfile.
    */
   async delete(): Promise<void> {
-    this._logger.debug('Delete pid file');
+    this.logger.debug('Delete pid file');
     await fs.unlink(this.filename);
   }
 }
