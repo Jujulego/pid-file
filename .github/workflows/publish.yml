@@ -110,7 +110,7 @@ jobs:
       - name: Regenerate README.md
         run: |
           npx jsdoc-to-markdown --files ./dist/cjs/*.js --template ./docs/README.hbs --example-lang typescript > ./README.md
-          git commit -am "chore: regenerate docs"
+          git diff --quiet --exit-code || git commit -am "chore: regenerate docs"
 
       - name: Apply version update
         id: version-apply
