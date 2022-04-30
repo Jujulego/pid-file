@@ -67,7 +67,7 @@ const pidfile = new PidFile('.example.pid', {
 
 <dl>
 <dt><a href="#DebugLogger">DebugLogger</a></dt>
-<dd><p>Implements <code>ILogger</code> using the <code>debug</code> module.</p>
+<dd><p>Default logger using the <code>debug</code> module.</p>
 </dd>
 <dt><a href="#PidFile">PidFile</a></dt>
 <dd></dd>
@@ -76,7 +76,7 @@ const pidfile = new PidFile('.example.pid', {
 <a name="DebugLogger"></a>
 
 ## DebugLogger
-Implements `ILogger` using the `debug` module.
+Default logger using the `debug` module.
 
 **Kind**: global class  
 <a name="PidFile"></a>
@@ -85,19 +85,19 @@ Implements `ILogger` using the `debug` module.
 **Kind**: global class  
 
 * [PidFile](#PidFile)
-    * [new PidFile(filename, _logger)](#new_PidFile_new)
+    * [new PidFile(filename, logger)](#new_PidFile_new)
     * [.create()](#PidFile+create)
     * [.update()](#PidFile+update)
     * [.delete()](#PidFile+delete)
 
 <a name="new_PidFile_new"></a>
 
-### new PidFile(filename, _logger)
+### new PidFile(filename, logger)
 
 | Param | Description |
 | --- | --- |
 | filename | path to the managed pidfile |
-| _logger | custom logger |
+| logger | custom logger |
 
 <a name="PidFile+create"></a>
 
