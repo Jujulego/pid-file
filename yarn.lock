@@ -2316,7 +2316,7 @@ __metadata:
     "@types/gulp-babel": 6.1.30
     "@types/gulp-sourcemaps": 0.0.35
     "@types/jest": 27.4.1
-    "@types/jsdoc-to-markdown": ^7
+    "@types/jsdoc-to-markdown": 7.0.3
     "@types/node": 14.18.16
     "@types/proper-lockfile": 4.1.2
     "@typescript-eslint/eslint-plugin": 5.21.0
@@ -2332,7 +2332,7 @@ __metadata:
     gulp-sourcemaps: 3.0.0
     gulp-typescript: 6.0.0-alpha.1
     jest: 27.5.1
-    jsdoc-to-markdown: ^7.1.1
+    jsdoc-to-markdown: 7.1.1
     proper-lockfile: ^4.1.2
     source-map-support: 0.5.21
     ts-jest: 27.1.4
@@ -2592,7 +2592,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jsdoc-to-markdown@npm:^7":
+"@types/jsdoc-to-markdown@npm:7.0.3":
   version: 7.0.3
   resolution: "@types/jsdoc-to-markdown@npm:7.0.3"
   checksum: f215d35d573616df64aa61358ea1576261afe81921940568e675e1b34e5b82694c3b59be1d02b3e6128c7f5f35b8c19ece4196f232b54fba1e723c85f484a03e
@@ -6995,7 +6995,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jsdoc-to-markdown@npm:^7.1.1":
+"jsdoc-to-markdown@npm:7.1.1":
   version: 7.1.1
   resolution: "jsdoc-to-markdown@npm:7.1.1"
   dependencies:
