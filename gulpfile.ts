@@ -1,9 +1,11 @@
 import { flow, steps } from '@jujulego/flow';
 import del from 'del';
+import { promises as fs } from 'fs';
 import gulp from 'gulp';
 import babel from 'gulp-babel';
 import sourcemaps from 'gulp-sourcemaps';
 import typescript from 'gulp-typescript';
+import jsdoc2md from 'jsdoc-to-markdown';
 
 // Config
 const paths = {
@@ -54,6 +56,14 @@ gulp.task('build:types', () => flow(
 ));
 
 gulp.task('build', gulp.parallel('build:cjs', 'build:esm', 'build:types'));
+
+gulp.task('docs', async () => {
+  const docs = await jsdoc2md.render({
+    files: './dist/cjs/*.js',
+    template: await fs.readFile('./docs/README.hbs', 'utf-8')
+  });
+  await fs.writeFile('./README.md', docs);
+});
 
 gulp.task('watch', () => gulp.watch([paths.src, ...paths.deps], { ignoreInitial: false },
   gulp.parallel('build:cjs', 'build:esm', 'build:types')

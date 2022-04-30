@@ -109,9 +109,7 @@ jobs:
 
       - name: Regenerate README.md
         run: |
-          yarn run docs
-          
-          # Commit
+          npx jsdoc-to-markdown --files ./dist/cjs/*.js --template ./docs/README.hbs --example-lang typescript > ./README.md
           git commit -am "chore: regenerate docs"
 
       - name: Apply version update
