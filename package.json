@@ -63,7 +63,7 @@
     "@typescript-eslint/parser": "5.30.3",
     "babel-plugin-add-import-extension": "1.6.0",
     "del": "6.0.0",
-    "eslint": "8.14.0",
+    "eslint": "8.19.0",
     "eslint-plugin-jest": "26.1.5",
     "gulp": "4.0.2",
     "gulp-babel": "8.0.0",
