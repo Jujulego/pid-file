@@ -2343,7 +2343,7 @@ __metadata:
     "@typescript-eslint/parser": 5.30.3
     babel-plugin-add-import-extension: 1.6.0
     debug: ^4.3.2
-    del: 6.0.0
+    del: 6.1.1
     eslint: 8.19.0
     eslint-plugin-jest: 26.5.3
     gulp: 4.0.2
@@ -4421,9 +4421,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"del@npm:6.0.0":
-  version: 6.0.0
-  resolution: "del@npm:6.0.0"
+"del@npm:6.1.1":
+  version: 6.1.1
+  resolution: "del@npm:6.1.1"
   dependencies:
     globby: ^11.0.1
     graceful-fs: ^4.2.4
@@ -4433,7 +4433,7 @@ __metadata:
     p-map: ^4.0.0
     rimraf: ^3.0.2
     slash: ^3.0.0
-  checksum: 5742891627e91aaf62385714025233f4664da28bc55b6ab825649dcdea4691fed3cf329a2b1913fd2d2612e693e99e08a03c84cac7f36ef54bacac9390520192
+  checksum: 563288b73b8b19a7261c47fd21a330eeab6e2acd7c6208c49790dfd369127120dd7836cdf0c1eca216b77c94782a81507eac6b4734252d3bef2795cb366996b6
   languageName: node
   linkType: hard
 
