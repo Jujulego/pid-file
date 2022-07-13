@@ -57,7 +57,7 @@
     "@types/gulp-sourcemaps": "0.0.35",
     "@types/jest": "28.1.4",
     "@types/jsdoc-to-markdown": "7.0.3",
-    "@types/node": "14.18.21",
+    "@types/node": "14.18.22",
     "@types/proper-lockfile": "4.1.2",
     "@typescript-eslint/eslint-plugin": "5.30.4",
     "@typescript-eslint/parser": "5.30.4",
