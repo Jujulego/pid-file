@@ -2627,7 +2627,7 @@ __metadata:
     "@types/gulp-sourcemaps": 0.0.35
     "@types/jest": 28.1.8
     "@types/jsdoc-to-markdown": 7.0.3
-    "@types/node": 14.18.26
+    "@types/node": 14.18.29
     "@types/proper-lockfile": 4.1.2
     "@typescript-eslint/eslint-plugin": 5.35.1
     "@typescript-eslint/parser": 5.35.1
@@ -2975,10 +2975,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:14.18.26":
-  version: 14.18.26
-  resolution: "@types/node@npm:14.18.26"
-  checksum: c6ac3f9d4f6f77c0fa5ac17757779ad4d9835abfe3af5708b7552597cb5c7c1103e83499ccaf767a1cfa70040990bcf3f58761c547051dc8d5077f3c419091b1
+"@types/node@npm:14.18.29":
+  version: 14.18.29
+  resolution: "@types/node@npm:14.18.29"
+  checksum: 43481c1c066dd01578ff137f437a8a901f8fcd3cdc068c36047c444861ab4aac8a62fb4eb6d03738df02006336c90619bfc7860d4e5b259916956942d2e68e88
   languageName: node
   linkType: hard
 
