@@ -52,7 +52,7 @@
     "@babel/preset-typescript": "7.18.6",
     "@jujulego/flow": "1.1.0",
     "@types/debug": "4.1.7",
-    "@types/gulp": "4.0.9",
+    "@types/gulp": "4.0.10",
     "@types/gulp-babel": "6.1.30",
     "@types/gulp-sourcemaps": "0.0.35",
     "@types/jest": "29.0.3",
