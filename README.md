@@ -63,22 +63,6 @@ const pidfile = new PidFile('.example.pid', {
 ```
 
 # Documentation
-## Classes
-
-<dl>
-<dt><a href="#DebugLogger">DebugLogger</a></dt>
-<dd><p>Default logger using the <code>debug</code> module.</p>
-</dd>
-<dt><a href="#PidFile">PidFile</a></dt>
-<dd></dd>
-</dl>
-
-<a name="DebugLogger"></a>
-
-## DebugLogger
-Default logger using the `debug` module.
-
-**Kind**: global class  
 <a name="PidFile"></a>
 
 ## PidFile
