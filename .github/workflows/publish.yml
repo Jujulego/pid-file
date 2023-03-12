@@ -162,7 +162,7 @@ jobs:
           path: coverage
 
       - name: Sonarcloud
-        uses: sonarsource/sonarcloud-github-action@v1.6
+        uses: sonarsource/sonarcloud-github-action@v1.9
         with:
           projectBaseDir: ${{ matrix.workspace }}
           args: >
