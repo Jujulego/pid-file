@@ -550,7 +550,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jest/core@npm:^29.0.3, @jest/core@npm:^29.5.0":
+"@jest/core@npm:^29.5.0":
   version: 29.5.0
   resolution: "@jest/core@npm:29.5.0"
   dependencies:
@@ -774,7 +774,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jest/types@npm:^29.0.3, @jest/types@npm:^29.5.0":
+"@jest/types@npm:^29.5.0":
   version: 29.5.0
   resolution: "@jest/types@npm:29.5.0"
   dependencies:
@@ -879,13 +879,13 @@ __metadata:
     "@types/debug": 4.1.7
     "@types/gulp": 4.0.10
     "@types/gulp-sourcemaps": 0.0.35
-    "@types/jest": 29.0.3
+    "@types/jest": 29.4.0
     "@types/jsdoc-to-markdown": 7.0.3
     "@types/node": 14.18.37
     "@types/proper-lockfile": 4.1.2
     "@typescript-eslint/eslint-plugin": 5.54.1
     "@typescript-eslint/parser": 5.54.1
-    debug: ^4.3.2
+    debug: ^4.3.4
     del: 6.1.1
     eslint: 8.36.0
     eslint-plugin-jest: 27.2.1
@@ -894,8 +894,8 @@ __metadata:
     gulp-sourcemaps: 3.0.0
     gulp-swc: 1.2.3
     gulp-typescript: 6.0.0-alpha.1
-    jest: 29.0.3
-    jsdoc-to-markdown: 7.1.1
+    jest: 29.5.0
+    jsdoc-to-markdown: 8.0.0
     proper-lockfile: ^4.1.2
     ts-node: 10.9.1
     typescript: 4.9.5
@@ -1344,13 +1344,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jest@npm:29.0.3":
-  version: 29.0.3
-  resolution: "@types/jest@npm:29.0.3"
+"@types/jest@npm:29.4.0":
+  version: 29.4.0
+  resolution: "@types/jest@npm:29.4.0"
   dependencies:
     expect: ^29.0.0
     pretty-format: ^29.0.0
-  checksum: 14a8ec1954540ec59f4072c3c4dbc6b5d5ff616556c98671aca26606bdf9d49616a3f269f3e488c80cd481ee19880351575c1f6895827628818e193600c121e0
+  checksum: 23760282362a252e6690314584d83a47512d4cd61663e957ed3398ecf98195fe931c45606ee2f9def12f8ed7d8aa102d492ec42d26facdaf8b78094a31e6568e
   languageName: node
   linkType: hard
 
@@ -3185,7 +3185,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dmd@npm:^6.1.0":
+"dmd@npm:^6.2.0":
   version: 6.2.0
   resolution: "dmd@npm:6.2.0"
   dependencies:
@@ -5179,7 +5179,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest-cli@npm:^29.0.3":
+"jest-cli@npm:^29.5.0":
   version: 29.5.0
   resolution: "jest-cli@npm:29.5.0"
   dependencies:
@@ -5564,14 +5564,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jest@npm:29.0.3":
-  version: 29.0.3
-  resolution: "jest@npm:29.0.3"
+"jest@npm:29.5.0":
+  version: 29.5.0
+  resolution: "jest@npm:29.5.0"
   dependencies:
-    "@jest/core": ^29.0.3
-    "@jest/types": ^29.0.3
+    "@jest/core": ^29.5.0
+    "@jest/types": ^29.5.0
     import-local: ^3.0.2
-    jest-cli: ^29.0.3
+    jest-cli: ^29.5.0
   peerDependencies:
     node-notifier: ^8.0.1 || ^9.0.0 || ^10.0.0
   peerDependenciesMeta:
@@ -5579,7 +5579,7 @@ __metadata:
       optional: true
   bin:
     jest: bin/jest.js
-  checksum: 6bffa1ec703dbf64ce79aa7ef2887b586fdc96881cf2b83c8e86569237124a17aa001ddd4e7be7877202abe530ee5c04e9f0dd54e7320533b05b90709aca2607
+  checksum: a8ff2eb0f421623412236e23cbe67c638127fffde466cba9606bc0c0553b4c1e5cb116d7e0ef990b5d1712851652c8ee461373b578df50857fe635b94ff455d5
   languageName: node
   linkType: hard
 
@@ -5629,9 +5629,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jsdoc-api@npm:^7.1.1":
-  version: 7.2.0
-  resolution: "jsdoc-api@npm:7.2.0"
+"jsdoc-api@npm:^8.0.0":
+  version: 8.0.0
+  resolution: "jsdoc-api@npm:8.0.0"
   dependencies:
     array-back: ^6.2.2
     cache-point: ^2.0.0
@@ -5642,11 +5642,11 @@ __metadata:
     object-to-spawn-args: ^2.0.1
     temp-path: ^1.0.0
     walk-back: ^5.1.0
-  checksum: 785b7d2c15055c6587b6b022a051d33c46ff5930159c25c4c98abe0bb6c0cbc8a5f0ecc8fee70de7737606d7c2658ca2783b8001b3249e45dec8a9a9733b5c95
+  checksum: 048d414895bf1fc4badba21385f43fe771f7f88e936b0e900744b0f9de67d0db224a51ea8df43c9aa92779cd220dfc1c042d06a5cd534f1eb35ad9397d5492ea
   languageName: node
   linkType: hard
 
-"jsdoc-parse@npm:^6.1.0":
+"jsdoc-parse@npm:^6.2.0":
   version: 6.2.0
   resolution: "jsdoc-parse@npm:6.2.0"
   dependencies:
@@ -5660,20 +5660,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jsdoc-to-markdown@npm:7.1.1":
-  version: 7.1.1
-  resolution: "jsdoc-to-markdown@npm:7.1.1"
+"jsdoc-to-markdown@npm:8.0.0":
+  version: 8.0.0
+  resolution: "jsdoc-to-markdown@npm:8.0.0"
   dependencies:
     array-back: ^6.2.2
     command-line-tool: ^0.8.0
     config-master: ^3.1.0
-    dmd: ^6.1.0
-    jsdoc-api: ^7.1.1
-    jsdoc-parse: ^6.1.0
+    dmd: ^6.2.0
+    jsdoc-api: ^8.0.0
+    jsdoc-parse: ^6.2.0
     walk-back: ^5.1.0
   bin:
     jsdoc2md: bin/cli.js
-  checksum: bae4892fd552e65c46634b3a61fc9a15fd9bff26f2731fbc63cf8b8b75cbe0fa391af8ac04b53fac17a395cdde5c74ada1e6af479a39d2ba2758f5583ac3afc4
+  checksum: 28acffe01b85e4bf5bec259ce9a8be8d28a1cedf1af0e4a9a6c13ddb4b398296c1fd9bdf6b486e619618fa90f23403f78fdf4a65a01ac3daa699be81f083282b
   languageName: node
   linkType: hard
 
