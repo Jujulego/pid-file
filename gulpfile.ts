@@ -1,61 +1,75 @@
 import { flow, steps } from '@jujulego/flow';
+
 import del from 'del';
-import { promises as fs } from 'fs';
 import gulp from 'gulp';
-import babel from 'gulp-babel';
 import sourcemaps from 'gulp-sourcemaps';
 import typescript from 'gulp-typescript';
 import jsdoc2md from 'jsdoc-to-markdown';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const swc = require('gulp-swc');
 
 // Config
-const paths = {
+const options = {
   src: 'src/**/*.ts',
+  output: 'dist',
+  tsconfig: 'tsconfig.json',
   deps: [
-    '../../.pnp.*',
+    '.pnp.*',
   ]
 };
 
-const ts = () => typescript.createProject('tsconfig.json')();
-const dts = () => typescript.createProject('tsconfig.json', {
-  isolatedModules: false,
-  emitDeclarationOnly: true
-})();
-
 // Steps
-const src = (task: string) => steps(
-  gulp.src(paths.src, { since: gulp.lastRun(task) }),
-  sourcemaps.init(),
-);
+export function src(...params: Parameters<typeof gulp.src>) {
+  return steps(
+    gulp.src(...params),
+    sourcemaps.init()
+  );
+}
 
-const dest = (dir: string) => steps(
-  sourcemaps.write('.'),
-  gulp.dest(dir),
-);
+export function dest(path: string) {
+  return steps(
+    sourcemaps.write('.'),
+    gulp.dest(path),
+  );
+}
+
+export function dts(tsconfig: string) {
+  const prj = typescript.createProject(tsconfig, {
+    isolatedModules: false,
+    emitDeclarationOnly: true
+  });
+
+  return prj();
+}
 
 // Tasks
-gulp.task('clean', () => del('dist'));
-
-gulp.task('build:cjs', () => flow(
-  src('build:cjs'),
-  ts(),
-  babel({ envName: 'cjs' } as Parameters<typeof babel>[0]),
-  dest('dist/cjs'),
-));
+gulp.task('clean', () => del(options.output));
 
 gulp.task('build:esm', () => flow(
-  src('build:esm'),
-  ts(),
-  babel({ envName: 'esm' } as Parameters<typeof babel>[0]),
-  dest('dist/esm'),
+  src(options.src, { since: gulp.lastRun('build:esm') }),
+  swc({ module: { type: 'es6' } }),
+  dest(path.join(options.output, 'esm'))
+));
+
+gulp.task('build:cjs', () => flow(
+  src(options.src, { since: gulp.lastRun('build:cjs') }),
+  swc({ module: { type: 'commonjs' } }),
+  dest(path.join(options.output, 'cjs'))
 ));
 
 gulp.task('build:types', () => flow(
-  src('build:types'),
-  dts(),
-  dest('dist/types')
+  src(options.src, { since: gulp.lastRun('build:types') }),
+  dts(options.tsconfig),
+  dest(path.join(options.output, 'types'))
 ));
 
-gulp.task('build', gulp.parallel('build:cjs', 'build:esm', 'build:types'));
+gulp.task('build', gulp.series(
+  'clean',
+  gulp.parallel('build:cjs', 'build:esm', 'build:types'),
+));
 
 gulp.task('docs', async () => {
   const docs = await jsdoc2md.render({
@@ -65,6 +79,6 @@ gulp.task('docs', async () => {
   await fs.writeFile('./README.md', docs);
 });
 
-gulp.task('watch', () => gulp.watch([paths.src, ...paths.deps], { ignoreInitial: false },
-  gulp.parallel('build:cjs', 'build:esm', 'build:types')
+gulp.task('watch', () => gulp.watch([options.src, ...options.deps], { ignoreInitial: false },
+  gulp.parallel('build:cjs', 'build:esm', 'build:types'),
 ));
