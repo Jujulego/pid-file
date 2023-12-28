@@ -501,7 +501,7 @@ __metadata:
     "@types/debug": "npm:4.1.7"
     "@types/jsdoc-to-markdown": "npm:7.0.6"
     "@types/node": "npm:18.19.3"
-    "@types/proper-lockfile": "npm:4.1.2"
+    "@types/proper-lockfile": "npm:4.1.4"
     "@typescript-eslint/eslint-plugin": "npm:6.15.0"
     "@typescript-eslint/parser": "npm:6.15.0"
     "@vitest/coverage-v8": "npm:1.1.0"
@@ -1029,12 +1029,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/proper-lockfile@npm:4.1.2":
-  version: 4.1.2
-  resolution: "@types/proper-lockfile@npm:4.1.2"
+"@types/proper-lockfile@npm:4.1.4":
+  version: 4.1.4
+  resolution: "@types/proper-lockfile@npm:4.1.4"
   dependencies:
     "@types/retry": "npm:*"
-  checksum: 125d4120b9bc1c5f0a1eca979caa6794535f7ac1a90ff56c16158c964635c7b66bd01a9f5b413b6241863b4f7a0edb17204c5aade57ff8a2649b3248604618e0
+  checksum: d597846d6f7860da2470623d3f11b6e5b39864719c3c18b5a5e55f783c5e432fe49dcdcf6341b3903428fdf103f2bdc68eba263ce1ce3cbe8070cbcb54bbf230
   languageName: node
   linkType: hard
 
