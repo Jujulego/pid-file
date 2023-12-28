@@ -507,7 +507,7 @@ __metadata:
     "@vitest/coverage-v8": "npm:1.1.0"
     debug: "npm:^4.3.4"
     eslint: "npm:8.56.0"
-    eslint-plugin-vitest: "npm:0.3.18"
+    eslint-plugin-vitest: "npm:0.3.20"
     jsdoc-to-markdown: "npm:8.0.0"
     proper-lockfile: "npm:^4.1.2"
     shx: "npm:0.3.4"
@@ -1209,7 +1209,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/utils@npm:^6.14.0":
+"@typescript-eslint/utils@npm:^6.15.0":
   version: 6.16.0
   resolution: "@typescript-eslint/utils@npm:6.16.0"
   dependencies:
@@ -2357,11 +2357,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-vitest@npm:0.3.18":
-  version: 0.3.18
-  resolution: "eslint-plugin-vitest@npm:0.3.18"
+"eslint-plugin-vitest@npm:0.3.20":
+  version: 0.3.20
+  resolution: "eslint-plugin-vitest@npm:0.3.20"
   dependencies:
-    "@typescript-eslint/utils": "npm:^6.14.0"
+    "@typescript-eslint/utils": "npm:^6.15.0"
   peerDependencies:
     eslint: ">=8.0.0"
     vitest: "*"
@@ -2370,7 +2370,7 @@ __metadata:
       optional: true
     vitest:
       optional: true
-  checksum: b4074bda1282cc681efe7177274113c01ccffe6d9af6aa555916934dfe920da1783de6cf4e9bc22e16040f7355707ebd04bd25991a41291db413d87247dad640
+  checksum: 37dbcb70f0aebacb2e1937c10fa9041be9a37e5c8d576137c7f2976349202f1af64f3616e9f0946c5be5cf6d7b70b4d9d9dbd0becdb138215a01301f431fe6b1
   languageName: node
   linkType: hard
 
