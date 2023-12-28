@@ -37,7 +37,7 @@ export class PidFile {
    */
   async create(): Promise<'created' | 'updated' | false> {
     try {
-      this.logger.debug`creating pid file as process ${process.pid}`;
+      this.logger.debug`Create pid file as process ${process.pid}`;
       await fs.writeFile(this.filename, process.pid.toString(), { flag: 'wx', encoding: 'utf-8' });
     } catch (err) {
       if ((err as NodeJS.ErrnoException).code === 'EEXIST') {
@@ -63,15 +63,13 @@ export class PidFile {
 
       // Check if other process is still running
       if (PidFile._processIsRunning(pid)) {
-        this.logger.debug`pid file already exists and its process ${pid} still runs`;
+        this.logger.debug`As pid file already exists and its process ${pid} still runs`;
         return false;
       }
 
       // Update pid file
-      this.logger.debug`updating pid file ${pid} => ${process.pid}`;
+      this.logger.debug`Update pid file from ${pid} to ${process.pid}`;
       await fs.writeFile(this.filename, process.pid.toString(), { flag: 'w', encoding: 'utf-8' });
-
-      this.logger.info`pid file updated as ${pid} was killed or stopped`;
 
       return true;
     } finally {
@@ -83,7 +81,15 @@ export class PidFile {
    * Deletes the pid file.
    */
   async delete(): Promise<void> {
-    this.logger.debug('delete pid file');
-    await fs.unlink(this.filename);
+    try {
+      this.logger.debug('Delete pid file');
+      await fs.unlink(this.filename);
+    } catch (err) {
+      if ((err as NodeJS.ErrnoException).code === 'ENOENT') {
+        return;
+      } else {
+        throw err;
+      }
+    }
   }
 }
