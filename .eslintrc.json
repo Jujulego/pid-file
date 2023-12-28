@@ -33,8 +33,7 @@
         "jest/globals": true
       },
       "extends": [
-        "plugin:jest/recommended",
-        "plugin:jest/style"
+        "plugin:vitest/recommended"
       ]
     }
   ]

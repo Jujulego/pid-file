@@ -9,7 +9,6 @@ export default defineConfig({
       include: ['src/**'],
       reporter: ['text', 'lcovonly'],
     },
-    globals: true,
     typecheck: {
       tsconfig: 'tests/tsconfig.json',
     }

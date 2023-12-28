@@ -1,27 +1,27 @@
 import { promises as fs } from 'fs';
-import { lock as _lock } from 'proper-lockfile';
+import { lock } from 'proper-lockfile';
+import { beforeEach, describe, expect, it, Mock, vi } from 'vitest';
 
-import { PidFile } from '../src';
+import { PidFile } from '../src/pid-file.js';
 
 // Mocks
-jest.mock('proper-lockfile');
-const lock = _lock as jest.MockedFunction<typeof _lock>;
+vi.mock('proper-lockfile');
 
 // Setup
 beforeEach(() => {
-  jest.resetAllMocks();
+  vi.resetAllMocks();
 });
 
 // Test suites
 describe('PidFile.create', () => {
   beforeEach(() => {
-    jest.spyOn(fs, 'writeFile')
+    vi.spyOn(fs, 'writeFile')
       .mockRejectedValue({ message: 'Failed !', code: 'EEXIST' });
   });
 
   // Tests
   it('should create pidfile and return true', async () => {
-    jest.spyOn(fs, 'writeFile').mockImplementation();
+    vi.spyOn(fs, 'writeFile').mockImplementation(async () => {});
 
     // Test
     const pidfile = new PidFile('.test.pid');
@@ -32,7 +32,7 @@ describe('PidFile.create', () => {
 
   it('should fail to create pidfile and try to update it', async () => {
     const pidfile = new PidFile('.test.pid');
-    jest.spyOn(pidfile, 'update').mockResolvedValue(true);
+    vi.spyOn(pidfile, 'update').mockResolvedValue(true);
 
     // Test
     await expect(pidfile.create()).resolves.toBe(true);
@@ -41,7 +41,7 @@ describe('PidFile.create', () => {
   });
 
   it('should fail to create pidfile and return false', async () => {
-    jest.spyOn(fs, 'writeFile').mockRejectedValue(new Error('Failed !'));
+    vi.spyOn(fs, 'writeFile').mockRejectedValue(new Error('Failed !'));
 
     // Test
     const pidfile = new PidFile('.test.pid');
@@ -50,18 +50,18 @@ describe('PidFile.create', () => {
 });
 
 describe('PidFile.update', () => {
-  let lockRelease: jest.Mock;
+  let lockRelease: Mock;
 
   beforeEach(() => {
-    jest.spyOn(fs, 'readFile').mockResolvedValue('-10');
-    jest.spyOn(fs, 'writeFile').mockImplementation();
+    vi.spyOn(fs, 'readFile').mockResolvedValue('-10');
+    vi.spyOn(fs, 'writeFile').mockImplementation(async () => {});
 
-    jest.spyOn(process, 'kill').mockImplementation(() => {
+    vi.spyOn(process, 'kill').mockImplementation(() => {
       throw new Error('Process not found');
     });
 
-    lockRelease = jest.fn();
-    lock.mockResolvedValue(lockRelease);
+    lockRelease = vi.fn();
+    vi.mocked(lock).mockResolvedValue(lockRelease);
   });
 
   // Tests
@@ -78,7 +78,7 @@ describe('PidFile.update', () => {
   });
 
   it('should not update pidfile as process is still running', async () => {
-    jest.spyOn(process, 'kill').mockImplementation();
+    vi.spyOn(process, 'kill').mockImplementation(async (): Promise<true> => true);
 
     // Test
     const pidfile = new PidFile('.test.pid');
@@ -89,7 +89,7 @@ describe('PidFile.update', () => {
   });
 
   it('should fail to update pidfile', async () => {
-    jest.spyOn(fs, 'writeFile').mockRejectedValue(new Error('Failed !'));
+    vi.spyOn(fs, 'writeFile').mockRejectedValue(new Error('Failed !'));
 
     // Test
     const pidfile = new PidFile('.test.pid');
@@ -103,7 +103,7 @@ describe('PidFile.update', () => {
 describe('PidFile.delete', () => {
   // Tests
   it('should delete pidfile', async () => {
-    jest.spyOn(fs, 'unlink').mockResolvedValue();
+    vi.spyOn(fs, 'unlink').mockResolvedValue();
 
     // Test
     const pidfile = new PidFile('.test.pid');
