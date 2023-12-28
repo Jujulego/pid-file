@@ -1,0 +1,203 @@
+name: 'Javascript'
+
+on:
+  push:
+    branches: [ latest, next ]
+
+  pull_request:
+    branches: [ latest, next ]
+
+concurrency:
+  group: javascript-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4.1.1
+
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@v4.0.0
+        with:
+          node-version: 18.x
+          cache: yarn
+
+      - name: Install
+        run: yarn install --immutable
+
+      - name: Build
+        run: yarn build
+
+      - uses: actions/upload-artifact@v4.0.0
+        with:
+          name: build
+          path: dist
+
+  lint:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      security-events: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4.1.1
+
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@v4.0.0
+        with:
+          node-version: 18.x
+          cache: yarn
+
+      - name: Install
+        run: yarn install --immutable
+
+      - name: Lint
+        continue-on-error: true
+        run: yarn lint -f @microsoft/sarif -o eslint-results.sarif
+
+      - name: Upload analysis results to GitHub
+        uses: github/codeql-action/upload-sarif@v3.22.11
+        with:
+          sarif_file: eslint-results.sarif
+          wait-for-processing: true
+
+  tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4.1.1
+
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@v4.0.0
+        with:
+          node-version: 18.x
+          cache: yarn
+
+      - name: Install
+        run: yarn install --immutable
+
+      - name: Run tests
+        run: yarn test --coverage --typecheck
+
+      - uses: actions/upload-artifact@v4.0.0
+        with:
+          name: coverage
+          path: coverage
+
+  publish:
+    if: ${{ github.event_name == 'push' }}
+    name: Publish to npm
+
+    runs-on: ubuntu-latest
+    environment: npm
+    needs: [ lint, build, tests ]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4.1.1
+
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@v4.0.0
+        with:
+          node-version: 18.x
+          registry-url: https://registry.npmjs.org
+          cache: yarn
+
+      - name: Install
+        run: yarn install --immutable
+
+      - uses: actions/download-artifact@v4.0.0
+        with:
+          name: build
+          path: dist
+
+      - name: Publish
+        run: yarn npm publish --access public --tag ${{ github.ref_name }} --tolerate-republish
+        env:
+          YARN_NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  sonarcloud:
+    if: ${{ !startsWith(github.head_ref, 'dependabot/') && !startsWith(github.head_ref, 'renovate/') }}
+    runs-on: ubuntu-latest
+    needs: [ tests ]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4.1.1
+        with:
+          fetch-depth: 0
+
+      - name: Download test coverage
+        uses: actions/download-artifact@v4.0.0
+        continue-on-error: true
+        with:
+          name: coverage
+          path: coverage
+
+      - name: Load package.json
+        id: info
+        run: echo "version=$(jq -r ".version" package.json)" >> $GITHUB_OUTPUT
+
+      - name: Sonarcloud
+        uses: sonarsource/sonarcloud-github-action@v2.1.1
+        with:
+          args: >
+            -Dsonar.projectVersion=${{ steps.info.outputs.version }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+  release:
+    if: ${{ github.event_name == 'push' }}
+
+    runs-on: ubuntu-latest
+    needs: [ publish ]
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4.1.1
+
+      - name: Read package.json
+        id: info
+        run: echo "version=$(jq -r ".version" package.json)" >> $GITHUB_OUTPUT
+
+      - name: Tag version
+        id: tag
+        run: |
+          echo "::group::git fetch --tags"
+          
+          git fetch --tags
+          
+          echo "::endgroup::"
+          
+          if [[ $(git tag -l $VERSION) == $VERSION ]]; then
+            echo "::notice::git tag $VERSION already exists"
+          else
+            git config user.name github-actions
+            git config user.email github-actions@github.com
+          
+            git tag $VERSION
+            git push --tags
+          
+            echo "notes=true" >> $GITHUB_OUTPUT
+          fi
+        env:
+          VERSION: v${{ steps.info.outputs.version }}
+
+      - name: Release notes
+        if: ${{ steps.tag.outputs.notes }}
+        uses: softprops/action-gh-release@v1
+        with:
+          name: ${{ steps.info.outputs.version }}
+          tag_name: v${{ steps.info.outputs.version }}
+          draft: true
+          generate_release_notes: true

@@ -1,8 +1,0 @@
-{
-  "dataSource": "prs",
-  "groupBy": {
-    "Enhancements:": ["enhancement"],
-    "Bug Fixes:": ["bug"],
-    "Documentation:": ["documentation"]
-  }
-}

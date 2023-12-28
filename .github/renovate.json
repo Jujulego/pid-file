@@ -1,0 +1,23 @@
+{
+  "extends": [
+    "config:base"
+  ],
+  "baseBranches": ["latest"],
+  "labels": ["dependencies"],
+  "packageRules": [
+    {
+      "matchDepTypes": ["devDependencies"],
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "automerge": true,
+      "automergeType": "pr",
+      "platformAutomerge": true
+    }
+  ],
+  "js": {
+    "addLabels": ["javascript"],
+    "postUpdateOptions": ["yarnDedupeHighest"]
+  },
+  "github-actions": {
+    "addLabels": ["github-actions"]
+  }
+}

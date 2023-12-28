@@ -1,3 +1,4 @@
+# Yarn
 .yarn/*
 !.yarn/patches
 !.yarn/releases
@@ -5,7 +6,10 @@
 !.yarn/sdks
 !.yarn/versions
 .pnp.*
-coverage/
-dist/
-*.pid
+
+# Generated files
+.vitest
+coverage
+dist
 *.log
+*.pid
