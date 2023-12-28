@@ -1,7 +1,7 @@
 import { promises as fs } from 'fs';
 import { lock } from 'proper-lockfile';
 
-import { DebugLogger, ILogger } from './logger';
+import { DebugLogger, ILogger } from './logger.js';
 
 // Class
 export class PidFile {
@@ -35,7 +35,7 @@ export class PidFile {
       this.logger.debug(`Create pid file ${process.pid}`);
       await fs.writeFile(this.filename, process.pid.toString(), { flag: 'wx', encoding: 'utf-8' });
     } catch (err) {
-      if (err.code === 'EEXIST') {
+      if ((err as NodeJS.ErrnoException).code === 'EEXIST') {
         // Try to update pidfile
         return await this.update();
       } else {

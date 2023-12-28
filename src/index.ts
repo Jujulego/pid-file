@@ -1,2 +1,2 @@
-export * from './logger';
-export * from './pid-file';
+export * from './logger.js';
+export * from './pid-file.js';
