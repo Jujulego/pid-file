@@ -514,12 +514,12 @@ __metadata:
     "@swc/helpers": "npm:^0.5.3"
     "@types/jsdoc-to-markdown": "npm:7.0.6"
     "@types/node": "npm:18.19.3"
-    "@types/proper-lockfile": "npm:4.1.2"
+    "@types/proper-lockfile": "npm:4.1.4"
     "@typescript-eslint/eslint-plugin": "npm:6.15.0"
     "@typescript-eslint/parser": "npm:6.15.0"
     "@vitest/coverage-v8": "npm:1.1.0"
     eslint: "npm:8.56.0"
-    eslint-plugin-vitest: "npm:0.3.18"
+    eslint-plugin-vitest: "npm:0.3.20"
     jsdoc-to-markdown: "npm:8.0.0"
     proper-lockfile: "npm:^4.1.2"
     shx: "npm:0.3.4"
@@ -1025,12 +1025,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/proper-lockfile@npm:4.1.2":
-  version: 4.1.2
-  resolution: "@types/proper-lockfile@npm:4.1.2"
+"@types/proper-lockfile@npm:4.1.4":
+  version: 4.1.4
+  resolution: "@types/proper-lockfile@npm:4.1.4"
   dependencies:
     "@types/retry": "npm:*"
-  checksum: 125d4120b9bc1c5f0a1eca979caa6794535f7ac1a90ff56c16158c964635c7b66bd01a9f5b413b6241863b4f7a0edb17204c5aade57ff8a2649b3248604618e0
+  checksum: d597846d6f7860da2470623d3f11b6e5b39864719c3c18b5a5e55f783c5e432fe49dcdcf6341b3903428fdf103f2bdc68eba263ce1ce3cbe8070cbcb54bbf230
   languageName: node
   linkType: hard
 
@@ -1205,7 +1205,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/utils@npm:^6.14.0":
+"@typescript-eslint/utils@npm:^6.15.0":
   version: 6.16.0
   resolution: "@typescript-eslint/utils@npm:6.16.0"
   dependencies:
@@ -2353,11 +2353,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-vitest@npm:0.3.18":
-  version: 0.3.18
-  resolution: "eslint-plugin-vitest@npm:0.3.18"
+"eslint-plugin-vitest@npm:0.3.20":
+  version: 0.3.20
+  resolution: "eslint-plugin-vitest@npm:0.3.20"
   dependencies:
-    "@typescript-eslint/utils": "npm:^6.14.0"
+    "@typescript-eslint/utils": "npm:^6.15.0"
   peerDependencies:
     eslint: ">=8.0.0"
     vitest: "*"
@@ -2366,7 +2366,7 @@ __metadata:
       optional: true
     vitest:
       optional: true
-  checksum: b4074bda1282cc681efe7177274113c01ccffe6d9af6aa555916934dfe920da1783de6cf4e9bc22e16040f7355707ebd04bd25991a41291db413d87247dad640
+  checksum: 37dbcb70f0aebacb2e1937c10fa9041be9a37e5c8d576137c7f2976349202f1af64f3616e9f0946c5be5cf6d7b70b4d9d9dbd0becdb138215a01301f431fe6b1
   languageName: node
   linkType: hard
 
