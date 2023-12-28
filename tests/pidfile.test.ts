@@ -1,4 +1,5 @@
-import { promises as fs } from 'fs';
+import fs from 'node:fs/promises';
+import process from 'node:process';
 import { lock } from 'proper-lockfile';
 import { beforeEach, describe, expect, it, Mock, vi } from 'vitest';
 
@@ -25,7 +26,7 @@ describe('PidFile.create', () => {
 
     // Test
     const pidfile = new PidFile('.test.pid');
-    await expect(pidfile.create()).resolves.toBe(true);
+    await expect(pidfile.create()).resolves.toBe('created');
 
     expect(fs.writeFile).toHaveBeenCalledWith('.test.pid', process.pid.toString(), { flag: 'wx', encoding: 'utf-8' });
   });
@@ -35,7 +36,7 @@ describe('PidFile.create', () => {
     vi.spyOn(pidfile, 'update').mockResolvedValue(true);
 
     // Test
-    await expect(pidfile.create()).resolves.toBe(true);
+    await expect(pidfile.create()).resolves.toBe('updated');
 
     expect(pidfile.update).toHaveBeenCalled();
   });
