@@ -1,6 +1,6 @@
 {
   "name": "@jujulego/pid-file",
-  "version": "1.0.6",
+  "version": "2.0.0",
   "license": "MIT",
   "keywords": [
     "node",
@@ -37,8 +37,8 @@
     "test": "vitest run"
   },
   "dependencies": {
+    "@jujulego/logger": "^0.3.4",
     "@swc/helpers": "^0.5.3",
-    "debug": "^4.3.4",
     "proper-lockfile": "^4.1.2"
   },
   "devDependencies": {
@@ -47,7 +47,6 @@
     "@microsoft/eslint-formatter-sarif": "3.0.0",
     "@swc/cli": "0.1.63",
     "@swc/core": "1.3.101",
-    "@types/debug": "4.1.12",
     "@types/jsdoc-to-markdown": "7.0.6",
     "@types/node": "18.19.3",
     "@types/proper-lockfile": "4.1.4",

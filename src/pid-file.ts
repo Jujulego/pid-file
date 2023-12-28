@@ -1,19 +1,24 @@
-import { promises as fs } from 'fs';
+import { Logger, logger$, withLabel } from '@jujulego/logger';
+import fs from 'node:fs/promises';
+import process from 'node:process';
 import { lock } from 'proper-lockfile';
-
-import { DebugLogger, ILogger } from './logger.js';
 
 // Class
 export class PidFile {
+  // Attributes
+  readonly logger: Logger;
+
   // Constructor
   /**
-   * @param filename path to the managed pidfile
+   * @param filename path to the managed pid file
    * @param logger custom logger
    */
   constructor(
     readonly filename: string,
-    private readonly logger: ILogger = new DebugLogger()
-  ) {}
+    logger: Logger = logger$()
+  ) {
+    this.logger = logger.child(withLabel('pid-file'));
+  }
 
   // Statics
   private static _processIsRunning(pid: number): boolean {
@@ -27,28 +32,27 @@ export class PidFile {
 
   // Methods
   /**
-   * Creates pidfile. If the pidfile already exists tries to update it.
-   * Returns true if the pidfile was successfully created/updated, false otherwise.
+   * Creates pid file. If the pid file already exists tries to update it.
+   * Returns true if the pid file was successfully created/updated, false otherwise.
    */
-  async create(): Promise<boolean> {
+  async create(): Promise<'created' | 'updated' | false> {
     try {
-      this.logger.debug(`Create pid file ${process.pid}`);
+      this.logger.debug`creating pid file as process ${process.pid}`;
       await fs.writeFile(this.filename, process.pid.toString(), { flag: 'wx', encoding: 'utf-8' });
     } catch (err) {
       if ((err as NodeJS.ErrnoException).code === 'EEXIST') {
-        // Try to update pidfile
-        return await this.update();
+        return await this.update() && 'updated';
       } else {
         throw err;
       }
     }
 
-    return true;
+    return 'created';
   }
 
   /**
-   * Tries to update the pidfile.
-   * Returns true if the pidfile was updated false otherwise.
+   * Tries to update the pid file.
+   * Returns true if the pid file was updated false otherwise.
    */
   async update(): Promise<boolean> {
     const release = await lock(this.filename);
@@ -56,18 +60,18 @@ export class PidFile {
     try {
       // Get other process pid
       const pid = parseInt(await fs.readFile(this.filename, 'utf-8'));
-      this.logger.warn(`Looks like server was already started (${pid})`);
 
       // Check if other process is still running
       if (PidFile._processIsRunning(pid)) {
+        this.logger.debug`pid file already exists and its process ${pid} still runs`;
         return false;
       }
 
-      // Lock pidfile
-      this.logger.debug(`Update pid file ${pid} => ${process.pid}`);
+      // Update pid file
+      this.logger.debug`updating pid file ${pid} => ${process.pid}`;
       await fs.writeFile(this.filename, process.pid.toString(), { flag: 'w', encoding: 'utf-8' });
 
-      this.logger.info(`${pid} was killed or stopped, pidfile updated`);
+      this.logger.info`pid file updated as ${pid} was killed or stopped`;
 
       return true;
     } finally {
@@ -76,10 +80,10 @@ export class PidFile {
   }
 
   /**
-   * Deletes the pidfile.
+   * Deletes the pid file.
    */
   async delete(): Promise<void> {
-    this.logger.debug('Delete pid file');
+    this.logger.debug('delete pid file');
     await fs.unlink(this.filename);
   }
 }
