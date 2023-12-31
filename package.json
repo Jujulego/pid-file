@@ -52,7 +52,7 @@
     "@types/proper-lockfile": "4.1.4",
     "@typescript-eslint/eslint-plugin": "6.16.0",
     "@typescript-eslint/parser": "6.16.0",
-    "@vitest/coverage-v8": "1.1.0",
+    "@vitest/coverage-v8": "1.1.1",
     "eslint": "8.56.0",
     "eslint-plugin-vitest": "0.3.20",
     "jsdoc-to-markdown": "8.0.0",
@@ -60,7 +60,7 @@
     "typescript": "5.3.3",
     "vite": "5.0.10",
     "vite-tsconfig-paths": "4.2.3",
-    "vitest": "1.1.0"
+    "vitest": "1.1.1"
   },
   "packageManager": "yarn@4.0.2"
 }
