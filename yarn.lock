@@ -489,15 +489,15 @@ __metadata:
   linkType: hard
 
 "@jujulego/logger@npm:^0.4.0":
-  version: 0.4.0
-  resolution: "@jujulego/logger@npm:0.4.0"
+  version: 0.4.2
+  resolution: "@jujulego/logger@npm:0.4.2"
   dependencies:
     "@jujulego/quick-tag": "npm:^0.4.0"
     "@swc/helpers": "npm:^0.5.3"
     chalk: "npm:^5.3.0"
     chalk-template: "npm:^1.1.0"
     kyrielle: "npm:^0.9.0"
-  checksum: f3b87def58b025c431ef7441d92014845a7e0fb042030444376add111c4e284245c0e9619aed375a050fc7ce7f8c88dfbddebd9999bc15bdaeb256c720692550
+  checksum: b4fb5766434e3c9847fa2503f70d2a70836ac190ac894908e70bbe04dd844fdb16bc529a007bed2552cf4466d309046f1be7aacbbfb96d388c6f439c19892ad1
   languageName: node
   linkType: hard
 
