@@ -488,16 +488,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jujulego/logger@npm:^0.4.0":
-  version: 0.4.2
-  resolution: "@jujulego/logger@npm:0.4.2"
+"@jujulego/logger@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@jujulego/logger@npm:1.0.0"
   dependencies:
-    "@jujulego/quick-tag": "npm:^0.4.0"
+    "@jujulego/quick-tag": "npm:^1.0.1"
     "@swc/helpers": "npm:^0.5.3"
     chalk: "npm:^5.3.0"
     chalk-template: "npm:^1.1.0"
-    kyrielle: "npm:^0.9.0"
-  checksum: b4fb5766434e3c9847fa2503f70d2a70836ac190ac894908e70bbe04dd844fdb16bc529a007bed2552cf4466d309046f1be7aacbbfb96d388c6f439c19892ad1
+    kyrielle: "npm:^0.10.0"
+  checksum: 58aac4b179e0f8dd26789d20bdcee65c7eee216c4f21164ebfcdc5cee1b287eaadf1c0731fc8b374ed073a10973ce7c9ff4e928fb2691afea3882cf0abd89dd1
   languageName: node
   linkType: hard
 
@@ -506,7 +506,7 @@ __metadata:
   resolution: "@jujulego/pid-file@workspace:."
   dependencies:
     "@jujulego/jill": "npm:2.5.0"
-    "@jujulego/logger": "npm:^0.4.0"
+    "@jujulego/logger": "npm:^1.0.0"
     "@jujulego/vite-plugin-swc": "npm:1.1.1"
     "@microsoft/eslint-formatter-sarif": "npm:3.0.0"
     "@swc/cli": "npm:0.1.64"
@@ -540,15 +540,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jujulego/quick-tag@npm:^0.4.0":
-  version: 0.4.0
-  resolution: "@jujulego/quick-tag@npm:0.4.0"
+"@jujulego/quick-tag@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "@jujulego/quick-tag@npm:1.0.1"
   dependencies:
     "@swc/helpers": "npm:^0.5.3"
+    safe-stable-stringify: "npm:^2.4.3"
   dependenciesMeta:
-    vitest@1.1.1:
+    vitest@1.2.1:
       unplugged: true
-  checksum: dcc254181263853cd86724c43ec52c32c553d60d88ed0c0e20b7d71abfc58762795ef28111f148e76df61d44bb6541f60f8965b5656c63d24f868e30db2591ae
+  checksum: 31775f50c44d06e6b481a0ec4198e3951f8f871e31c5732749dfb38ec9612fe1ebb06687e99fc87192ac07586dc7655687dd60b620cd90f42890fbd8fa2e659f
   languageName: node
   linkType: hard
 
@@ -3559,16 +3560,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"kyrielle@npm:^0.9.0":
-  version: 0.9.0
-  resolution: "kyrielle@npm:0.9.0"
+"kyrielle@npm:^0.10.0":
+  version: 0.10.1
+  resolution: "kyrielle@npm:0.10.1"
   dependencies:
     "@swc/helpers": "npm:^0.5.3"
     immer: "npm:^10.0.3"
   dependenciesMeta:
-    vitest@1.1.1:
+    vitest@1.2.1:
       unplugged: true
-  checksum: f73f0507e7afc6128be4faaadded77fc35808999ccf5ad5baf47344f9fad589e7dafa6e25d0a1c6f8382b1f4bc2e1e74df563a7578fe1d254ad3f97a8e8874ba
+  checksum: e8cc4aaa4d84504c1ddea61b5cd4d58e66a20958e46b9a08613ccc78e4667dc96577e709d73db00d5aff55e66314eb057cd3032c1017267eeb511173ee4d9d28
   languageName: node
   linkType: hard
 
@@ -4809,6 +4810,13 @@ __metadata:
   version: 5.2.1
   resolution: "safe-buffer@npm:5.2.1"
   checksum: 6501914237c0a86e9675d4e51d89ca3c21ffd6a31642efeba25ad65720bce6921c9e7e974e5be91a786b25aa058b5303285d3c15dbabf983a919f5f630d349f3
+  languageName: node
+  linkType: hard
+
+"safe-stable-stringify@npm:^2.4.3":
+  version: 2.4.3
+  resolution: "safe-stable-stringify@npm:2.4.3"
+  checksum: 81dede06b8f2ae794efd868b1e281e3c9000e57b39801c6c162267eb9efda17bd7a9eafa7379e1f1cacd528d4ced7c80d7460ad26f62ada7c9e01dec61b2e768
   languageName: node
   linkType: hard
 
