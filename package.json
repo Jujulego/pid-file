@@ -1,6 +1,6 @@
 {
   "name": "@jujulego/pid-file",
-  "version": "2.0.2",
+  "version": "2.1.0",
   "license": "MIT",
   "keywords": [
     "node",
@@ -37,7 +37,7 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "@jujulego/logger": "^0.4.0",
+    "@jujulego/logger": "^1.0.0",
     "@swc/helpers": "^0.5.3",
     "proper-lockfile": "^4.1.2"
   },
