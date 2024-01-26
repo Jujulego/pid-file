@@ -48,7 +48,7 @@
     "@swc/cli": "0.3.0",
     "@swc/core": "1.3.106",
     "@types/jsdoc-to-markdown": "7.0.6",
-    "@types/node": "18.19.9",
+    "@types/node": "18.19.10",
     "@types/proper-lockfile": "4.1.4",
     "@typescript-eslint/eslint-plugin": "6.19.1",
     "@typescript-eslint/parser": "6.19.1",
