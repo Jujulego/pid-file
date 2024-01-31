@@ -520,7 +520,7 @@ __metadata:
     "@vitest/coverage-v8": "npm:1.2.2"
     eslint: "npm:8.56.0"
     eslint-plugin-vitest: "npm:0.3.21"
-    jsdoc-to-markdown: "npm:8.0.0"
+    jsdoc-to-markdown: "npm:8.0.1"
     proper-lockfile: "npm:^4.1.2"
     shx: "npm:0.3.4"
     typescript: "npm:5.3.3"
@@ -3445,34 +3445,33 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jsdoc-parse@npm:^6.2.0":
-  version: 6.2.0
-  resolution: "jsdoc-parse@npm:6.2.0"
+"jsdoc-parse@npm:^6.2.1":
+  version: 6.2.1
+  resolution: "jsdoc-parse@npm:6.2.1"
   dependencies:
     array-back: "npm:^6.2.2"
     lodash.omit: "npm:^4.5.0"
-    lodash.pick: "npm:^4.4.0"
     reduce-extract: "npm:^1.0.0"
     sort-array: "npm:^4.1.5"
     test-value: "npm:^3.0.0"
-  checksum: 2fd1e7fcc805a91569e1a0322d84e327bd823fe9f6b16414896a73478ca599781c2f104ab8e27d19d5519b5f9c7beefcd826e70246dd25941742dcb654b2bfc5
+  checksum: 4040817b6dbc32d42fe43a3dd8ffbef9edd95dc555b099bd62308bc7d3b6e154bcec22322c2e2872f28e99e93538b33e054258013075a41b8ba643a0289645d0
   languageName: node
   linkType: hard
 
-"jsdoc-to-markdown@npm:8.0.0":
-  version: 8.0.0
-  resolution: "jsdoc-to-markdown@npm:8.0.0"
+"jsdoc-to-markdown@npm:8.0.1":
+  version: 8.0.1
+  resolution: "jsdoc-to-markdown@npm:8.0.1"
   dependencies:
     array-back: "npm:^6.2.2"
     command-line-tool: "npm:^0.8.0"
     config-master: "npm:^3.1.0"
     dmd: "npm:^6.2.0"
     jsdoc-api: "npm:^8.0.0"
-    jsdoc-parse: "npm:^6.2.0"
+    jsdoc-parse: "npm:^6.2.1"
     walk-back: "npm:^5.1.0"
   bin:
     jsdoc2md: bin/cli.js
-  checksum: 2e94403f2a7206b0b1555bff8c881afe99f28cedfd020498b15fc176565d9758df656e8af53b2a8e8d7862f94f417472231d98923857451678eca99b3aa1a4fc
+  checksum: a6fa05ba9846dc99eac54273010736c24c3d5b8bd73240345cf410b0b57e6aba6cf953c37e1d48a2fc3e8dce75152ec3be241569466ff47817cf14b45700325a
   languageName: node
   linkType: hard
 
@@ -3644,13 +3643,6 @@ __metadata:
   version: 4.6.1
   resolution: "lodash.padend@npm:4.6.1"
   checksum: da10eae6e7862541e431d97e652ea66690307104676a30793398e2f66d0fd9a62b07f199451d2185560d9b4627dc6652d33dc7cceb7ab9d843f6e15addec56f5
-  languageName: node
-  linkType: hard
-
-"lodash.pick@npm:^4.4.0":
-  version: 4.4.0
-  resolution: "lodash.pick@npm:4.4.0"
-  checksum: a04c460b95d1aaa44e9513d1dacf72ea74d838da843e45831de9de64c303f13cdde1859702a6f4dcef417816898ffd47c6ae0614c957ac70245bed2809b8d2e2
   languageName: node
   linkType: hard
 
