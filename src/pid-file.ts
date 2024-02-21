@@ -1,4 +1,4 @@
-import { Logger, logger$, withLabel } from '@jujulego/logger';
+import { Logger, logger$, withLabel } from '@kyrielle/logger';
 import fs from 'node:fs/promises';
 import process from 'node:process';
 import { lock } from 'proper-lockfile';
