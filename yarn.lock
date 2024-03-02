@@ -932,11 +932,11 @@ __metadata:
   linkType: hard
 
 "@swc/helpers@npm:^0.5.3":
-  version: 0.5.3
-  resolution: "@swc/helpers@npm:0.5.3"
+  version: 0.5.6
+  resolution: "@swc/helpers@npm:0.5.6"
   dependencies:
     tslib: "npm:^2.4.0"
-  checksum: 10c0/7003b9dafad38e27a4474a3dcf78d2aee85ce4bb7ee171ecc2d5b533768fb4f8fc9dbd6a1c3a9df5f8001e61ff416b93681e0a7dcbdc0df109b3e09c50cd4615
+  checksum: 10c0/ae43e2130b0c47a8c5dc51148925604707ee7801fef90674f71d2266a98b272c8f16145931fc7d51daf6795c4f3a86ccecd472e94a7ea562e0db7c333447d9e6
   languageName: node
   linkType: hard
 
