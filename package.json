@@ -58,7 +58,7 @@
     "jsdoc-to-markdown": "8.0.1",
     "shx": "0.3.4",
     "typescript": "5.3.3",
-    "vite": "5.2.5",
+    "vite": "5.2.6",
     "vite-tsconfig-paths": "4.3.2",
     "vitest": "1.4.0"
   },
