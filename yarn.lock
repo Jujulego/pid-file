@@ -493,7 +493,7 @@ __metadata:
     "@swc/core": "npm:1.4.8"
     "@swc/helpers": "npm:^0.5.6"
     "@types/jsdoc-to-markdown": "npm:7.0.6"
-    "@types/node": "npm:18.19.28"
+    "@types/node": "npm:18.19.29"
     "@types/proper-lockfile": "npm:4.1.4"
     "@typescript-eslint/eslint-plugin": "npm:7.5.0"
     "@typescript-eslint/parser": "npm:7.5.0"
@@ -1052,12 +1052,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:18.19.28":
-  version: 18.19.28
-  resolution: "@types/node@npm:18.19.28"
+"@types/node@npm:*, @types/node@npm:18.19.29":
+  version: 18.19.29
+  resolution: "@types/node@npm:18.19.29"
   dependencies:
     undici-types: "npm:~5.26.4"
-  checksum: 10c0/f068c1c01f4b24bc70ad249882176cd6eb8b9e4662b001452383879a70f22153c83de7c06902ae11da1a9ac9bd7778c51d2f6f80cc05da2eec08e071d6a5542f
+  checksum: 10c0/71b6f7c728463310296a6f7b6959226c7dee2e3901060d18a9f8445bc4efbd6671d5c5d440031057bb2261b3ced44826ca38ed683adc3d7397a75a567dc65222
   languageName: node
   linkType: hard
 
