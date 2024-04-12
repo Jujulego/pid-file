@@ -488,7 +488,7 @@ __metadata:
     "@jujulego/jill": "npm:2.5.2"
     "@jujulego/vite-plugin-swc": "npm:1.2.0"
     "@kyrielle/logger": "npm:^1.0.0-alpha.6"
-    "@microsoft/eslint-formatter-sarif": "npm:3.0.0"
+    "@microsoft/eslint-formatter-sarif": "npm:3.1.0"
     "@swc/cli": "npm:0.3.10"
     "@swc/core": "npm:1.4.8"
     "@swc/helpers": "npm:^0.5.6"
@@ -589,15 +589,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@microsoft/eslint-formatter-sarif@npm:3.0.0":
-  version: 3.0.0
-  resolution: "@microsoft/eslint-formatter-sarif@npm:3.0.0"
+"@microsoft/eslint-formatter-sarif@npm:3.1.0":
+  version: 3.1.0
+  resolution: "@microsoft/eslint-formatter-sarif@npm:3.1.0"
   dependencies:
     eslint: "npm:^8.9.0"
     jschardet: "npm:latest"
     lodash: "npm:^4.17.14"
     utf8: "npm:^3.0.0"
-  checksum: 10c0/e083246b50b02852806511a408c7b272f7f81b837b5625c5f1e42171e11b82fa6b03ede5dec5ba6a9b72081217ff3be1d608deec455ca65c4dc7b0724d4c52c2
+  checksum: 10c0/c4052ea4f728fd01932406468fa688582f843059786bfce1ef1d0f6d957f43871a1e888095af6d958b90e4380f179049c77f2058fd5ead3354aa73147e60c5b7
   languageName: node
   linkType: hard
 
