@@ -46,7 +46,7 @@
     "@jujulego/vite-plugin-swc": "1.2.0",
     "@microsoft/eslint-formatter-sarif": "3.1.0",
     "@swc/cli": "0.3.12",
-    "@swc/core": "1.5.5",
+    "@swc/core": "1.5.6",
     "@types/jsdoc-to-markdown": "7.0.6",
     "@types/node": "18.19.33",
     "@types/proper-lockfile": "4.1.4",
