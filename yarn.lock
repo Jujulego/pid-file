@@ -576,17 +576,17 @@ __metadata:
   linkType: hard
 
 "@kyrielle/logger@npm:^1.0.0-alpha.6":
-  version: 1.0.0-alpha.8
-  resolution: "@kyrielle/logger@npm:1.0.0-alpha.8"
+  version: 1.0.0-beta.2
+  resolution: "@kyrielle/logger@npm:1.0.0-beta.2"
   dependencies:
     "@jujulego/quick-tag": "npm:^1.0.1"
     "@swc/helpers": "npm:^0.5.3"
-    kyrielle: "npm:^1.0.0-alpha.4"
+    kyrielle: "npm:^1.0.0-beta.1"
     pretty-ms: "npm:^9.0.0"
   dependenciesMeta:
-    vitest@1.4.0:
+    vitest@2.0.2:
       unplugged: true
-  checksum: 10c0/aa05679d2a3718845ee50df1dc601d6f3830819e11d6ba1a96a181049bed8d20a21e4f7d1860867902dd2181c598a9f5fc59c44512da268020ceb34171575e7b
+  checksum: 10c0/85096111d1a583c28f432576cb528182fe3990683208a5c393a41a41f886c70afd4e2ec0044b652421b4a7be12b2d9cad5a4e3544375e8fdd693fafbb7b0972b
   languageName: node
   linkType: hard
 
@@ -3563,16 +3563,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"kyrielle@npm:^1.0.0-alpha.4":
-  version: 1.0.0-alpha.5
-  resolution: "kyrielle@npm:1.0.0-alpha.5"
+"kyrielle@npm:^1.0.0-beta.1":
+  version: 1.0.0-beta.2
+  resolution: "kyrielle@npm:1.0.0-beta.2"
   dependencies:
     "@repeaterjs/repeater": "npm:^3.0.5"
     "@swc/helpers": "npm:^0.5.3"
   dependenciesMeta:
-    vitest@1.4.0:
+    vitest@1.6.0:
       unplugged: true
-  checksum: 10c0/9f0a79c3552dda76acc321d09e90bc2d5dcec5b44adea1afa5cb1cccdcb50a954c4ef434cc492973d0ce15598f34f57a3fa9360ffeeb85d76db5eb62273d7e60
+  checksum: 10c0/88af0d7b35e809ae13351866d39d0fd5fd0a80abc17c3ac9978b33ac76b99597ad8cc0d99d939f50ed93f36b5430f708a377a6199cd5159b1313c4bd55864dd2
   languageName: node
   linkType: hard
 
