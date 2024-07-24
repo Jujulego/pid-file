@@ -500,7 +500,7 @@ __metadata:
     "@vitest/coverage-v8": "npm:1.6.0"
     eslint: "npm:8.57.0"
     eslint-plugin-vitest: "npm:0.4.1"
-    jsdoc-to-markdown: "npm:8.0.2"
+    jsdoc-to-markdown: "npm:8.0.3"
     proper-lockfile: "npm:^4.1.2"
     shx: "npm:0.3.4"
     typescript: "npm:5.5.4"
@@ -2085,14 +2085,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dmd@npm:^6.2.1":
-  version: 6.2.1
-  resolution: "dmd@npm:6.2.1"
+"dmd@npm:^6.2.3":
+  version: 6.2.3
+  resolution: "dmd@npm:6.2.3"
   dependencies:
     array-back: "npm:^6.2.2"
     cache-point: "npm:^2.0.0"
     common-sequence: "npm:^2.0.2"
-    fast-glob: "npm:^3.3.2"
+    file-set: "npm:^4.0.2"
     handlebars: "npm:^4.7.8"
     marked: "npm:^4.3.0"
     object-get: "npm:^2.1.1"
@@ -2101,7 +2101,7 @@ __metadata:
     reduce-without: "npm:^1.0.1"
     test-value: "npm:^3.0.0"
     walk-back: "npm:^5.1.0"
-  checksum: 10c0/4dacf0cad84d8f7dfc7826392ea360f2d66ddcb5a1880f42a8774cf03a39b17978ec5a172941428dfc2f4fa0c844062b9d7aba75d1d79bef9a866316790928b0
+  checksum: 10c0/826d511063fb861f3c426fdb31a7d3ed6973d49cdf2ca696b2bff970322a6403fbb4ad2c99381b56997debac80ee33f7a2c244f0ffaa5079bd19334e2f7d5646
   languageName: node
   linkType: hard
 
@@ -2516,7 +2516,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-glob@npm:^3.2.5, fast-glob@npm:^3.2.9, fast-glob@npm:^3.3.2":
+"fast-glob@npm:^3.2.5, fast-glob@npm:^3.2.9":
   version: 3.3.2
   resolution: "fast-glob@npm:3.3.2"
   dependencies:
@@ -2558,6 +2558,16 @@ __metadata:
   dependencies:
     flat-cache: "npm:^3.0.4"
   checksum: 10c0/58473e8a82794d01b38e5e435f6feaf648e3f36fdb3a56e98f417f4efae71ad1c0d4ebd8a9a7c50c3ad085820a93fc7494ad721e0e4ebc1da3573f4e1c3c7cdd
+  languageName: node
+  linkType: hard
+
+"file-set@npm:^4.0.2":
+  version: 4.0.2
+  resolution: "file-set@npm:4.0.2"
+  dependencies:
+    array-back: "npm:^5.0.0"
+    glob: "npm:^7.1.6"
+  checksum: 10c0/940bf0aa4fecdc3e8a2688fa15dd71181c13acfe8db0201052373e03d383cd82e296bf13a03cc20a33b177ba22152b37a3e73ef0e099466485296b0ea69022c9
   languageName: node
   linkType: hard
 
@@ -2796,7 +2806,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glob@npm:^7.0.0, glob@npm:^7.1.3, glob@npm:^7.1.4":
+"glob@npm:^7.0.0, glob@npm:^7.1.3, glob@npm:^7.1.4, glob@npm:^7.1.6":
   version: 7.2.3
   resolution: "glob@npm:7.2.3"
   dependencies:
@@ -3409,19 +3419,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jsdoc-api@npm:^8.1.0":
-  version: 8.1.0
-  resolution: "jsdoc-api@npm:8.1.0"
+"jsdoc-api@npm:^8.1.1":
+  version: 8.1.1
+  resolution: "jsdoc-api@npm:8.1.1"
   dependencies:
     array-back: "npm:^6.2.2"
     cache-point: "npm:^2.0.0"
     collect-all: "npm:^1.0.4"
+    file-set: "npm:^4.0.2"
     fs-then-native: "npm:^2.0.0"
     jsdoc: "npm:^4.0.3"
     object-to-spawn-args: "npm:^2.0.1"
     temp-path: "npm:^1.0.0"
     walk-back: "npm:^5.1.0"
-  checksum: 10c0/84437f2ba91a5e171937a7b7111d4372f544afbba8b0a823e7f6963e68d947397d6d28fbae92b193a4aa9a16b6525aa8ec824a62e5d2d44a192915fc2607c312
+  checksum: 10c0/501dd94b62adccc2168195641123bd5c79d00359e0f38d37370485e36afc45bcfeba7eeaeb62d9450aa1a9a6df4dffa15ded55b3a77f351f2e4d09ab0225e108
   languageName: node
   linkType: hard
 
@@ -3438,20 +3449,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jsdoc-to-markdown@npm:8.0.2":
-  version: 8.0.2
-  resolution: "jsdoc-to-markdown@npm:8.0.2"
+"jsdoc-to-markdown@npm:8.0.3":
+  version: 8.0.3
+  resolution: "jsdoc-to-markdown@npm:8.0.3"
   dependencies:
     array-back: "npm:^6.2.2"
     command-line-tool: "npm:^0.8.0"
     config-master: "npm:^3.1.0"
-    dmd: "npm:^6.2.1"
-    jsdoc-api: "npm:^8.1.0"
+    dmd: "npm:^6.2.3"
+    jsdoc-api: "npm:^8.1.1"
     jsdoc-parse: "npm:^6.2.1"
     walk-back: "npm:^5.1.0"
   bin:
     jsdoc2md: bin/cli.js
-  checksum: 10c0/56eb880ef99dc0f89e0eabc35ce4481e02bee4f5c06e4ca8547e3fc88ad5357be9557c11150f84a3993fb7ee37ec9c8c13a6b81f5ed85cf98ed2ba0cd23f7075
+  checksum: 10c0/f47b1d0b019c09a4b0f02c07728ffc330bdf67af332b2d3439e0cad3f12fbd3ff56a117a6128a6107ecae84421f3a557eed8aaff8f6ccc6ba0211498c0423ad8
   languageName: node
   linkType: hard
 
