@@ -1,4 +1,4 @@
-import { Logger, logger$, withLabel } from '@kyrielle/logger';
+import { type Logger, logger$, withLabel } from '@kyrielle/logger';
 import fs from 'node:fs/promises';
 import process from 'node:process';
 import { lock } from 'proper-lockfile';
@@ -25,7 +25,7 @@ export class PidFile {
     try {
       process.kill(pid, 0);
       return true;
-    } catch (err) {
+    } catch (err) { // eslint-disable-line @typescript-eslint/no-unused-vars
       return false;
     }
   }

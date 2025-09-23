@@ -34,7 +34,8 @@
     "build": "jill run 'build:esm // build:types'",
     "build:esm": "swc src -d dist --strip-leading-paths",
     "build:types": "tsc --project tsconfig.build.json",
-    "test": "vitest run"
+    "test": "vitest run",
+    "test:types": "tsc --project tests"
   },
   "dependencies": {
     "@kyrielle/logger": "^1.0.0-alpha.6",
@@ -42,6 +43,7 @@
     "proper-lockfile": "^4.1.2"
   },
   "devDependencies": {
+    "@eslint/js": "9.36.0",
     "@jujulego/jill": "2.5.2",
     "@jujulego/vite-plugin-swc": "1.2.0",
     "@microsoft/eslint-formatter-sarif": "3.1.0",
@@ -50,14 +52,14 @@
     "@types/jsdoc-to-markdown": "7.0.6",
     "@types/node": "18.19.127",
     "@types/proper-lockfile": "4.1.4",
-    "@typescript-eslint/eslint-plugin": "8.44.1",
-    "@typescript-eslint/parser": "8.44.1",
     "@vitest/coverage-v8": "3.2.4",
-    "eslint": "8.57.1",
-    "eslint-plugin-vitest": "0.4.1",
+    "@vitest/eslint-plugin": "1.3.12",
+    "eslint": "9.36.0",
+    "jiti": "2.6.0",
     "jsdoc-to-markdown": "8.0.3",
     "shx": "0.3.4",
-    "typescript": "5.5.4",
+    "typescript": "5.9.2",
+    "typescript-eslint": "8.44.1",
     "vite": "5.4.20",
     "vite-tsconfig-paths": "5.1.4",
     "vitest": "3.2.4"
