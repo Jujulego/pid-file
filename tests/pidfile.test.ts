@@ -79,7 +79,7 @@ describe('PidFile.update', () => {
   });
 
   it('should not update pidfile as process is still running', async () => {
-    vi.spyOn(process, 'kill').mockImplementation(async (): Promise<true> => true);
+    vi.spyOn(process, 'kill').mockReturnValue(true);
 
     // Test
     const pidfile = new PidFile('.test.pid');

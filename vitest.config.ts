@@ -3,8 +3,8 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
+  cacheDir: '.vite',
   test: {
-    cache: { dir: '.vitest' },
     coverage: {
       include: ['src/**'],
       reporter: ['text', 'lcovonly'],
