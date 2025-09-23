@@ -1,4 +1,4 @@
-name: 'Javascript'
+name: 'CI'
 
 on:
   push:
@@ -8,21 +8,25 @@ on:
     branches: [ latest, next ]
 
 concurrency:
-  group: javascript-${{ github.ref }}
+  group: ci-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
   build:
+    name: 'Build'
     runs-on: ubuntu-latest
+    
+    permissions:
+      contents: read
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v5.0.0
 
-      - name: Use Node.js 18.x
-        uses: actions/setup-node@v4.4.0
+      - name: Setup Node.js
+        uses: actions/setup-node@v5.0.0
         with:
-          node-version: 18.x
+          node-version: 22.x
           cache: yarn
 
       - name: Install
@@ -37,6 +41,7 @@ jobs:
           path: dist
 
   lint:
+    name: 'Lint'
     runs-on: ubuntu-latest
 
     permissions:
@@ -47,10 +52,10 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v5.0.0
 
-      - name: Use Node.js 18.x
-        uses: actions/setup-node@v4.4.0
+      - name: Setup Node.js
+        uses: actions/setup-node@v5.0.0
         with:
-          node-version: 18.x
+          node-version: 22.x
           cache: yarn
 
       - name: Install
@@ -66,46 +71,76 @@ jobs:
           sarif_file: eslint-results.sarif
           wait-for-processing: true
 
-  tests:
+  unit-tests:
+    name: 'Unit tests'
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v5.0.0
 
-      - name: Use Node.js 18.x
-        uses: actions/setup-node@v4.4.0
+      - name: Use Node.js
+        uses: actions/setup-node@v5.0.0
         with:
-          node-version: 18.x
+          node-version: 22.x
           cache: yarn
 
       - name: Install
         run: yarn install --immutable
 
-      - name: Run tests
-        run: yarn test --coverage --typecheck
+      - name: Check tests typings
+        run: yarn test:types
 
-      - uses: actions/upload-artifact@v4.6.2
+      - name: Run tests
+        run: yarn vitest tests/unit --coverage
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v5
         with:
-          name: coverage
-          path: coverage
+          flags: unit
+          token: ${{ secrets.CODECOV_TOKEN }}
+
+      - name: Upload results to Codecov
+        if: ${{ !cancelled() }}
+        uses: codecov/test-results-action@v1
+        with:
+          files: junit-report.xml
+          flags: unit
+          token: ${{ secrets.CODECOV_TOKEN }}
+
+  ready:
+    name: 'Ready'
+    runs-on: ubuntu-latest
+    needs: [ lint, build, unit-tests ]
+
+    permissions:
+      contents: read
+
+    steps:
+      - run: echo 'You are sooo curious!'
 
   publish:
     if: ${{ github.event_name == 'push' }}
-    name: Publish to npm
+    name: 'Publish to npm'
 
     runs-on: ubuntu-latest
     environment: npm
-    needs: [ lint, build, tests ]
+    needs: [ ready ]
+
+    permissions:
+      contents: read
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v5.0.0
 
-      - name: Use Node.js 18.x
-        uses: actions/setup-node@v4.4.0
+      - name: Setup Node.js
+        uses: actions/setup-node@v5.0.0
         with:
-          node-version: 18.x
+          node-version: 22.x
           registry-url: https://registry.npmjs.org
           cache: yarn
 
@@ -122,39 +157,9 @@ jobs:
         env:
           YARN_NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-  sonarcloud:
-    if: ${{ !startsWith(github.head_ref, 'dependabot/') && !startsWith(github.head_ref, 'renovate/') }}
-    runs-on: ubuntu-latest
-    needs: [ tests ]
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v5.0.0
-        with:
-          fetch-depth: 0
-
-      - name: Download test coverage
-        uses: actions/download-artifact@v5.0.0
-        continue-on-error: true
-        with:
-          name: coverage
-          path: coverage
-
-      - name: Load package.json
-        id: info
-        run: echo "version=$(jq -r ".version" package.json)" >> $GITHUB_OUTPUT
-
-      - name: Sonarcloud
-        uses: sonarsource/sonarcloud-github-action@v2.3.0
-        with:
-          args: >
-            -Dsonar.projectVersion=${{ steps.info.outputs.version }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-
   release:
     if: ${{ github.event_name == 'push' }}
+    name: 'Publish release'
 
     runs-on: ubuntu-latest
     needs: [ publish ]
@@ -199,5 +204,4 @@ jobs:
         with:
           name: ${{ steps.info.outputs.version }}
           tag_name: v${{ steps.info.outputs.version }}
-          draft: true
           generate_release_notes: true
