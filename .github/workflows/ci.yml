@@ -95,7 +95,7 @@ jobs:
         run: yarn test:types
 
       - name: Run tests
-        run: yarn vitest tests/unit --coverage
+        run: yarn vitest --coverage
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v5
