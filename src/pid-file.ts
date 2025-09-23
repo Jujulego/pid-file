@@ -25,7 +25,7 @@ export class PidFile {
     try {
       process.kill(pid, 0);
       return true;
-    } catch (err) { // eslint-disable-line @typescript-eslint/no-unused-vars
+    } catch {
       return false;
     }
   }
