@@ -38,7 +38,7 @@
     "test:types": "tsc --project tests"
   },
   "dependencies": {
-    "@kyrielle/logger": "^1.0.0-alpha.6",
+    "@kyrielle/logger": "^2.0.0",
     "@swc/helpers": "^0.5.6",
     "proper-lockfile": "^4.1.2"
   },
