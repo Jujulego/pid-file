@@ -1,13 +1,10 @@
-import { type Logger, logger$, withLabel } from '@kyrielle/logger';
+import { type Logger } from '@kyrielle/logger';
 import fs from 'node:fs/promises';
 import process from 'node:process';
 import { lock } from 'proper-lockfile';
 
 // Class
 export class PidFile {
-  // Attributes
-  readonly logger: Logger;
-
   // Constructor
   /**
    * @param filename path to the managed pid file
@@ -15,10 +12,8 @@ export class PidFile {
    */
   constructor(
     readonly filename: string,
-    logger: Logger = logger$()
-  ) {
-    this.logger = logger.child(withLabel('pid-file'));
-  }
+    readonly logger?: Logger,
+  ) {}
 
   // Statics
   private static _processIsRunning(pid: number): boolean {
@@ -37,7 +32,7 @@ export class PidFile {
    */
   async create(): Promise<'created' | 'updated' | false> {
     try {
-      this.logger.debug`Create pid file as process ${process.pid}`;
+      this.logger?.debug(`Create pid file as process ${process.pid}`);
       await fs.writeFile(this.filename, process.pid.toString(), { flag: 'wx', encoding: 'utf-8' });
     } catch (err) {
       if ((err as NodeJS.ErrnoException).code === 'EEXIST') {
@@ -63,12 +58,12 @@ export class PidFile {
 
       // Check if other process is still running
       if (PidFile._processIsRunning(pid)) {
-        this.logger.debug`As pid file already exists and its process ${pid} still runs`;
+        this.logger?.debug(`As pid file already exists and its process ${pid} still runs`);
         return false;
       }
 
       // Update pid file
-      this.logger.debug`Update pid file from ${pid} to ${process.pid}`;
+      this.logger?.debug(`Update pid file from ${pid} to ${process.pid}`);
       await fs.writeFile(this.filename, process.pid.toString(), { flag: 'w', encoding: 'utf-8' });
 
       return true;
@@ -82,7 +77,7 @@ export class PidFile {
    */
   async delete(): Promise<void> {
     try {
-      this.logger.debug('Delete pid file');
+      this.logger?.debug('Delete pid file');
       await fs.unlink(this.filename);
     } catch (err) {
       if ((err as NodeJS.ErrnoException).code === 'ENOENT') {
