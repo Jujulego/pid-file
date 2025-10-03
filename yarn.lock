@@ -616,7 +616,7 @@ __metadata:
     "@vitest/eslint-plugin": "npm:1.3.15"
     eslint: "npm:9.36.0"
     jiti: "npm:2.6.1"
-    jsdoc-to-markdown: "npm:9.1.2"
+    jsdoc-to-markdown: "npm:9.1.3"
     proper-lockfile: "npm:^4.1.2"
     shx: "npm:0.4.0"
     typescript: "npm:5.9.3"
@@ -3837,21 +3837,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jsdoc-parse@npm:^6.2.4":
-  version: 6.2.4
-  resolution: "jsdoc-parse@npm:6.2.4"
+"jsdoc-parse@npm:^6.2.5":
+  version: 6.2.5
+  resolution: "jsdoc-parse@npm:6.2.5"
   dependencies:
     array-back: "npm:^6.2.2"
     find-replace: "npm:^5.0.1"
-    lodash.omit: "npm:^4.5.0"
     sort-array: "npm:^5.0.0"
-  checksum: 10c0/cabfb58cb97616f77ac8b09d3cf6af0eba79b275c9471c85fe9a887d74c39129e36f0cd222aee51a78adcde29d265863e9ee98771959b6fa8dc23d716d851608
+  checksum: 10c0/96217eca086dda0fa3b07ea21e6b7ef89e1bd1182e023395fb1137ddf33664339ac61b9f8916afb489cbed901765302661c10e99500239e784bc30a295460cf3
   languageName: node
   linkType: hard
 
-"jsdoc-to-markdown@npm:9.1.2":
-  version: 9.1.2
-  resolution: "jsdoc-to-markdown@npm:9.1.2"
+"jsdoc-to-markdown@npm:9.1.3":
+  version: 9.1.3
+  resolution: "jsdoc-to-markdown@npm:9.1.3"
   dependencies:
     array-back: "npm:^6.2.2"
     command-line-args: "npm:^6.0.1"
@@ -3859,7 +3858,7 @@ __metadata:
     config-master: "npm:^3.1.0"
     dmd: "npm:^7.1.1"
     jsdoc-api: "npm:^9.3.5"
-    jsdoc-parse: "npm:^6.2.4"
+    jsdoc-parse: "npm:^6.2.5"
     walk-back: "npm:^5.1.1"
   peerDependencies:
     "@75lb/nature": "*"
@@ -3868,7 +3867,7 @@ __metadata:
       optional: true
   bin:
     jsdoc2md: bin/cli.js
-  checksum: 10c0/fa0b55188ea3d7acd900fe9184995264c9340dc29e88576752a302720202b1727b9f32880761209f264d76c8a78129e1c7f4eef26a146bba59040cf730867629
+  checksum: 10c0/3d728e36dd92b94f614f9ef83e4eed565588a23b7a91e698037d085bb394c56222ad6eabe6fb9cce1386f2ae8a3890352330249e5e021bc8dd5b976c217c9fd2
   languageName: node
   linkType: hard
 
@@ -4025,13 +4024,6 @@ __metadata:
   version: 4.6.2
   resolution: "lodash.merge@npm:4.6.2"
   checksum: 10c0/402fa16a1edd7538de5b5903a90228aa48eb5533986ba7fa26606a49db2572bf414ff73a2c9f5d5fd36b31c46a5d5c7e1527749c07cbcf965ccff5fbdf32c506
-  languageName: node
-  linkType: hard
-
-"lodash.omit@npm:^4.5.0":
-  version: 4.5.0
-  resolution: "lodash.omit@npm:4.5.0"
-  checksum: 10c0/3808b9b6faae35177174b6ab327f1177e29c91f1e98dcbccf13a72a6767bba337306449d537a4e0d8a33d2673f10d39bc732e30c4b803274ea0c1168ea60e549
   languageName: node
   linkType: hard
 
