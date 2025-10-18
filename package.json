@@ -45,7 +45,7 @@
   "devDependencies": {
     "@eslint/js": "9.38.0",
     "@jujulego/jill": "2.5.2",
-    "@jujulego/vite-plugin-swc": "1.2.0",
+    "@jujulego/vite-plugin-swc": "1.2.1",
     "@microsoft/eslint-formatter-sarif": "3.1.0",
     "@swc/cli": "0.7.8",
     "@swc/core": "1.13.20",
