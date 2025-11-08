@@ -1,6 +1,6 @@
 {
   "name": "@jujulego/pid-file",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "license": "MIT",
   "keywords": [
     "node",
@@ -44,7 +44,7 @@
   },
   "devDependencies": {
     "@eslint/js": "9.39.1",
-    "@jujulego/jill": "2.5.2",
+    "@jujulego/jill": "3.0.0-alpha.8",
     "@jujulego/vite-plugin-swc": "1.2.1",
     "@microsoft/eslint-formatter-sarif": "3.1.0",
     "@swc/cli": "0.7.9",
