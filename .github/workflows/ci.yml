@@ -27,7 +27,6 @@ jobs:
         uses: actions/setup-node@v6.0.0
         with:
           node-version: 24.x
-          cache: yarn
 
       - name: Install
         run: yarn install --immutable
@@ -56,7 +55,6 @@ jobs:
         uses: actions/setup-node@v6.0.0
         with:
           node-version: 24.x
-          cache: yarn
 
       - name: Install
         run: yarn install --immutable
@@ -77,6 +75,7 @@ jobs:
 
     permissions:
       contents: read
+      id-token: write
 
     steps:
       - name: Checkout repository
@@ -86,7 +85,6 @@ jobs:
         uses: actions/setup-node@v6.0.0
         with:
           node-version: 24.x
-          cache: yarn
 
       - name: Install
         run: yarn install --immutable
@@ -101,7 +99,7 @@ jobs:
         uses: codecov/codecov-action@v5
         with:
           flags: unit
-          token: ${{ secrets.CODECOV_TOKEN }}
+          use_oidc: true
 
       - name: Upload results to Codecov
         if: ${{ !cancelled() }}
@@ -109,7 +107,7 @@ jobs:
         with:
           files: junit-report.xml
           flags: unit
-          token: ${{ secrets.CODECOV_TOKEN }}
+          use_oidc: true
 
   ready:
     name: 'Ready'
@@ -132,6 +130,7 @@ jobs:
 
     permissions:
       contents: read
+      id-token: write
 
     steps:
       - name: Checkout repository
@@ -142,10 +141,6 @@ jobs:
         with:
           node-version: 24.x
           registry-url: https://registry.npmjs.org
-          cache: yarn
-
-      - name: Install
-        run: yarn install --immutable
 
       - uses: actions/download-artifact@v6.0.0
         with:
@@ -153,9 +148,16 @@ jobs:
           path: dist
 
       - name: Publish
-        run: yarn npm publish --access public --tag ${{ github.ref_name }} --tolerate-republish
-        env:
-          YARN_NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        # language=Bash
+        run: |
+          name=$(jq -j ".name" package.json)
+          version=$(npm view $name@${{ github.ref_name }} version)
+          
+          if [[ "$version" == "$(jq -j ".version" package.json)" ]]; then
+            echo "::notice::$version already exists in npm registry"
+          else
+            npm publish --access public --tag ${{ github.ref_name }} --provenance
+          fi
 
   release:
     if: ${{ github.event_name == 'push' }}
