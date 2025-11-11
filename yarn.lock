@@ -508,12 +508,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jujulego/jill@npm:3.0.0-alpha.8":
-  version: 3.0.0-alpha.8
-  resolution: "@jujulego/jill@npm:3.0.0-alpha.8"
+"@jujulego/jill@npm:3.0.0-alpha.9":
+  version: 3.0.0-alpha.9
+  resolution: "@jujulego/jill@npm:3.0.0-alpha.9"
   dependencies:
     "@jujulego/quick-tag": "npm:^1.0.3"
-    "@jujulego/tasks": "npm:3.0.0-alpha.10"
+    "@jujulego/tasks": "npm:3.0.0-alpha.11"
     "@kyrielle/injector": "npm:^1.1.0"
     "@kyrielle/logger": "npm:^2.0.0"
     "@sentry/node": "npm:^10.5.0"
@@ -540,7 +540,7 @@ __metadata:
       unplugged: true
   bin:
     jill: bin/jill.js
-  checksum: 10c0/1d2d1e5ae7aaf66dad129e0fb2dd58de4d683eea91df1f9ad72ecf572072c41d4fa28f191da13d2ae0d4dc636021cce13c06ef56e59a889d6431afde736dd35a
+  checksum: 10c0/dae3d8ae110146b2a5ad41806387317bfba3221bed7c7c74f7cedd225c9ec3228788ecbd8d45b40c4036506e8f007563561e99943ac299bfa793539a634bd65c
   languageName: node
   linkType: hard
 
@@ -549,7 +549,7 @@ __metadata:
   resolution: "@jujulego/pid-file@workspace:."
   dependencies:
     "@eslint/js": "npm:9.39.1"
-    "@jujulego/jill": "npm:3.0.0-alpha.8"
+    "@jujulego/jill": "npm:3.0.0-alpha.9"
     "@jujulego/vite-plugin-swc": "npm:1.2.1"
     "@kyrielle/logger": "npm:^2.0.0"
     "@microsoft/eslint-formatter-sarif": "npm:3.1.0"
@@ -587,15 +587,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jujulego/tasks@npm:3.0.0-alpha.10":
-  version: 3.0.0-alpha.10
-  resolution: "@jujulego/tasks@npm:3.0.0-alpha.10"
+"@jujulego/tasks@npm:3.0.0-alpha.11":
+  version: 3.0.0-alpha.11
+  resolution: "@jujulego/tasks@npm:3.0.0-alpha.11"
   dependencies:
-    "@kyrielle/logger": "npm:^2.0.0"
     "@swc/helpers": "npm:^0.5.3"
     kyrielle: "npm:^2.8.0"
-    tree-kill: "npm:^1.2.2"
-  checksum: 10c0/53d379a4953ab988f5fb560fe439df5e34d2363e20eebe0d12d47010b7c935910d94fbbc6678f69e824334e7e6982138d7de1e7bb96fbda884f6cb91b304da8e
+  checksum: 10c0/b94c7d457e76d0b924238313be7705f5846d2a75ec96f4ce0d9e484c804c20587dd7c8ae61b6e05edeeb4a747989be94b08b0e9754b13743dfd6851557ad5292
   languageName: node
   linkType: hard
 
@@ -6114,15 +6112,6 @@ __metadata:
     "@tokenizer/token": "npm:^0.3.0"
     ieee754: "npm:^1.2.1"
   checksum: 10c0/e2405e7789d41693a09c478b53c47ffadd735a5f4c826d9885787d022ab10e26cc4a67b03593285748bf3b0c0237e0ea2ab268abcb953ea314727201d0f6504d
-  languageName: node
-  linkType: hard
-
-"tree-kill@npm:^1.2.2":
-  version: 1.2.2
-  resolution: "tree-kill@npm:1.2.2"
-  bin:
-    tree-kill: cli.js
-  checksum: 10c0/7b1b7c7f17608a8f8d20a162e7957ac1ef6cd1636db1aba92f4e072dc31818c2ff0efac1e3d91064ede67ed5dc57c565420531a8134090a12ac10cf792ab14d2
   languageName: node
   linkType: hard
 
