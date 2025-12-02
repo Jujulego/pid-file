@@ -471,16 +471,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jujulego/jill@npm:3.0.2":
-  version: 3.0.2
-  resolution: "@jujulego/jill@npm:3.0.2"
+"@jujulego/jill@npm:3.0.4":
+  version: 3.0.4
+  resolution: "@jujulego/jill@npm:3.0.4"
   dependencies:
     "@sentry/node": "npm:^10.0.0"
     "@swc/helpers": "npm:^0.5.0"
     yargs: "npm:^18.0.0"
   bin:
     jill: bin/jill.js
-  checksum: 10c0/1e4d5db8e3218c813f534dd5ec50e86fdc44285fee9b5abad9d2de04f898032adcaacac86593bd666e10d83a39b5559823a5e3511c8489eb5b207f17b00c62b4
+  checksum: 10c0/38465606cac47ad1d56fed1ea0e44fc85c08fb6d8b004d2f6f07402b24940706a1a1931378ea3d1b3be2d3744a74782bbd52a359185b7272231bc5c15a5fca94
   languageName: node
   linkType: hard
 
@@ -489,7 +489,7 @@ __metadata:
   resolution: "@jujulego/pid-file@workspace:."
   dependencies:
     "@eslint/js": "npm:9.39.1"
-    "@jujulego/jill": "npm:3.0.2"
+    "@jujulego/jill": "npm:3.0.4"
     "@jujulego/vite-plugin-swc": "npm:1.2.1"
     "@kyrielle/logger": "npm:^2.0.0"
     "@microsoft/eslint-formatter-sarif": "npm:3.1.0"
