@@ -500,7 +500,7 @@ __metadata:
     "@types/node": "npm:24.12.0"
     "@types/proper-lockfile": "npm:4.1.4"
     "@vitest/coverage-v8": "npm:4.0.18"
-    "@vitest/eslint-plugin": "npm:1.6.10"
+    "@vitest/eslint-plugin": "npm:1.6.11"
     eslint: "npm:9.39.4"
     jiti: "npm:2.6.1"
     jsdoc-to-markdown: "npm:9.1.3"
@@ -2003,9 +2003,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vitest/eslint-plugin@npm:1.6.10":
-  version: 1.6.10
-  resolution: "@vitest/eslint-plugin@npm:1.6.10"
+"@vitest/eslint-plugin@npm:1.6.11":
+  version: 1.6.11
+  resolution: "@vitest/eslint-plugin@npm:1.6.11"
   dependencies:
     "@typescript-eslint/scope-manager": "npm:^8.55.0"
     "@typescript-eslint/utils": "npm:^8.55.0"
@@ -2018,7 +2018,7 @@ __metadata:
       optional: true
     vitest:
       optional: true
-  checksum: 10c0/5b10a3eb82284698c4aad57a96218c98623061cb28c069c3e9fa027ca95d69bdaf07a312aa4950664b030f14e6f42dc44d483ca695e3d3fe0e22a40a7918cc28
+  checksum: 10c0/fba8459a2702f85f128bf663a9d7ab70660c66a0d5299be1f12b871e317638f7831140d9d284efd46c8de06ed8fe602e777f8a3326498b6976cde958b0e20a35
   languageName: node
   linkType: hard
 
