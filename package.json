@@ -50,7 +50,7 @@
     "@swc/cli": "0.8.1",
     "@swc/core": "1.15.21",
     "@types/jsdoc-to-markdown": "7.0.6",
-    "@types/node": "24.12.1",
+    "@types/node": "24.12.2",
     "@types/proper-lockfile": "4.1.4",
     "@vitest/coverage-v8": "4.1.2",
     "@vitest/eslint-plugin": "1.6.14",
