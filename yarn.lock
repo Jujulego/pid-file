@@ -331,7 +331,7 @@ __metadata:
     "@swc/core": "npm:1.15.21"
     "@swc/helpers": "npm:^0.5.6"
     "@types/jsdoc-to-markdown": "npm:7.0.6"
-    "@types/node": "npm:24.12.0"
+    "@types/node": "npm:24.12.1"
     "@types/proper-lockfile": "npm:4.1.4"
     "@vitest/coverage-v8": "npm:4.1.2"
     "@vitest/eslint-plugin": "npm:1.6.14"
@@ -1624,12 +1624,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:24.12.0":
-  version: 24.12.0
-  resolution: "@types/node@npm:24.12.0"
+"@types/node@npm:*, @types/node@npm:24.12.1":
+  version: 24.12.1
+  resolution: "@types/node@npm:24.12.1"
   dependencies:
     undici-types: "npm:~7.16.0"
-  checksum: 10c0/8b31c0af5b5474f13048a4e77c57f22cd4f8fe6e58c4b6fde9456b0c13f46a5bfaf5744ff88fd089581de9f0d6e99c584e022681de7acb26a58d258c654c4843
+  checksum: 10c0/0917fdf2e87980a8cd61b5b94c96443a8448cdc39b7d1782dc7d9916e4daa1bd6bac526125e9e4901a9cb41bfffee2dafdbeabc9d0639da7b4d620a7c30edc63
   languageName: node
   linkType: hard
 
