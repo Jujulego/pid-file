@@ -62,7 +62,7 @@
     "typescript-eslint": "8.59.1",
     "vite": "8.0.10",
     "vite-tsconfig-paths": "6.1.1",
-    "vitest": "4.1.5"
+    "vitest": "4.1.11"
   },
   "packageManager": "yarn@4.13.0"
 }
